@@ -19,7 +19,6 @@ import javax.persistence.Id;
 
 @Entity(name = "user")
 public class User {
-
     @Id
     private String userName;
     @Column
