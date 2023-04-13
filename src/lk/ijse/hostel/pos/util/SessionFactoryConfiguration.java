@@ -5,6 +5,7 @@
 
 package lk.ijse.hostel.pos.util;
 
+import lk.ijse.hostel.pos.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -15,7 +16,8 @@ public class SessionFactoryConfiguration {
     private SessionFactory sessionFactory;
 
     private SessionFactoryConfiguration() {
-        Configuration configuration = new Configuration().configure().addAnnotatedClass();
+        Configuration configuration = new Configuration().configure().
+                addAnnotatedClass(User.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 
