@@ -6,6 +6,7 @@
 package lk.ijse.hostel.pos.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
@@ -32,6 +33,7 @@ public class RoomFormController {
     public TableColumn colQty;
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
+    public JFXComboBox cmbRoomId;
 
     public void homeOnAction(MouseEvent mouseEvent) {
     }
@@ -49,5 +51,8 @@ public class RoomFormController {
     }
 
     public void backOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void roomIdOnAction(ActionEvent actionEvent) {
     }
 }

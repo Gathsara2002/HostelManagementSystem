@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="findeKeyMoneyAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.FindKeyMoneyFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutX="120.0" layoutY="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="63.0" layoutY="9.0" text="Hostel Management System" textFill="#dc0d0d">
+         <font>
+            <Font name="Berlin Sans FB" size="28.0" />
+         </font>
+      </Label>
+      <Circle fx:id="btnHome" layoutX="84.0" layoutY="745.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="62.0" layoutY="724.0" onDragDetected="#backOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/backtoicon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="84.0" text="Find Key Money Form">
+         <font>
+            <Font name="Century Schoolbook" size="36.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbResNo" layoutX="950.0" layoutY="95.0" onAction="#resNoOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Reservation No : " AnchorPane.rightAnchor="150.0" />
+      <TableView fx:id="tblFindeKeyMoney" layoutX="125.0" layoutY="239.0" prefHeight="400.0" prefWidth="1200.0" AnchorPane.leftAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="colResNo" prefWidth="150.0" text="Reservation No" />
+            <TableColumn fx:id="colRoomId" prefWidth="150.0" text="Room ID" />
+            <TableColumn fx:id="colSid" prefWidth="150.0" text="Student ID" />
+            <TableColumn fx:id="colSName" prefWidth="150.0" text="Student Name" />
+            <TableColumn fx:id="colRoomType" prefWidth="150.0" text="Room Type" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="150.0" text="Key Money" />
+            <TableColumn fx:id="colAdvance" prefWidth="150.0" text="Advance" />
+            <TableColumn fx:id="colStatus" prefWidth="150.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -6,6 +6,7 @@
 package lk.ijse.hostel.pos.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -43,6 +44,7 @@ public class StudentFormController {
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
     public DatePicker datePicker;
+    public JFXComboBox cmbStdId;
 
     public void homeOnAction(MouseEvent mouseEvent) {
     }
@@ -66,5 +68,8 @@ public class StudentFormController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
+    }
+
+    public void sidOnAction(ActionEvent actionEvent) {
     }
 }

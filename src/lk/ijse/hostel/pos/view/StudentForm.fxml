@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
@@ -107,7 +108,7 @@
             <TableColumn fx:id="colGender" prefWidth="150.0" text="Gender" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnNewStd" buttonType="RAISED" layoutX="1099.0" layoutY="86.0" onAction="#newStdaOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Student" AnchorPane.rightAnchor="100.0">
+      <JFXButton fx:id="btnNewStd" buttonType="RAISED" layoutX="1100.0" layoutY="450.0" onAction="#newStdaOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Student" AnchorPane.rightAnchor="100.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -115,7 +116,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1103.0" layoutY="504.0" onAction="#saveOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #32ff7e;" text="Save" AnchorPane.rightAnchor="100.0">
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1100.0" layoutY="510.0" onAction="#saveOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #32ff7e;" text="Save" AnchorPane.rightAnchor="100.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -140,6 +141,7 @@
          </cursor>
       </JFXButton>
       <DatePicker fx:id="datePicker" layoutX="699.0" layoutY="267.0" prefHeight="26.0" prefWidth="150.0" />
+      <JFXComboBox fx:id="cmbStdId" layoutX="1100.0" layoutY="82.0" onAction="#sidOnAction" prefHeight="37.0" prefWidth="200.0" promptText="Student ID :" />
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />

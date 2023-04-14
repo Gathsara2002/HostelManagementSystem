@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -55,7 +56,7 @@
             <Font name="Century Schoolbook" size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtRoomType" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Room Type :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="180.0">
+      <JFXTextField fx:id="txtRoomType" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="400.0" promptText="Room Type :" text="Room Type :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
@@ -83,7 +84,7 @@
             <TableColumn fx:id="colQty" prefWidth="200.0" text="QTY" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnAddRoom" buttonType="RAISED" layoutX="1099.0" layoutY="86.0" onAction="#newRoomOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Room" AnchorPane.rightAnchor="120.0">
+      <JFXButton fx:id="btnAddRoom" buttonType="RAISED" layoutX="1080.0" layoutY="444.0" onAction="#newRoomOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Room" AnchorPane.rightAnchor="120.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -115,6 +116,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXComboBox fx:id="cmbRoomId" layoutX="1000.0" layoutY="85.0" onAction="#roomIdOnAction" prefHeight="40.0" prefWidth="200.0" promptText="Room ID : " />
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />
