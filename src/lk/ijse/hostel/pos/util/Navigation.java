@@ -50,6 +50,11 @@ public class Navigation {
                 window.setTitle("Manage Reservation Form");
                 initUI("ReservationForm.fxml");
                 break;
+
+            case BACK_TO_DASHBOARD:
+                window.setTitle("DashBoard Form");
+                initUI("DashBoardForm.fxml");
+                break;
         }
     }
 

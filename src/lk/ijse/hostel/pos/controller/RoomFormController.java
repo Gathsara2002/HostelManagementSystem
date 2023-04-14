@@ -15,6 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.util.Navigation;
+import lk.ijse.hostel.pos.util.Routes;
+
+import java.io.IOException;
 
 public class RoomFormController {
     public AnchorPane roomAP;
@@ -36,6 +40,11 @@ public class RoomFormController {
     public JFXComboBox cmbRoomId;
 
     public void homeOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD,roomAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void newRoomOnAction(ActionEvent actionEvent) {
@@ -51,6 +60,11 @@ public class RoomFormController {
     }
 
     public void backOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD,roomAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void roomIdOnAction(ActionEvent actionEvent) {

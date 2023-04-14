@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.hostel.pos.util.Navigation;
+import lk.ijse.hostel.pos.util.Routes;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,12 +30,9 @@ public class LoginFormController {
 //    String userName=txtUsername.getText();
 
     public void logInOnAction(ActionEvent actionEvent) {
-
         try {
-            URL resource = getClass().getResource("/lk/ijse/hostel/pos/view/DashBordForm.fxml");
-            Parent load = FXMLLoader.load(resource);
-            Stage window = (Stage) loginAP.getScene().getWindow();
-            window.setScene(new Scene(load));
+            Navigation.navigate(Routes.DASHBOARD_FORM,loginAP);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

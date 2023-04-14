@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginForm">
+<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
    <children>
       <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="198.0" layoutY="580.0" onAction="#logInOnAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #192a56;" text="Log In " textFill="WHITE">
          <font>

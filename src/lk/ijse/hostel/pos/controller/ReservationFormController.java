@@ -15,6 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.util.Navigation;
+import lk.ijse.hostel.pos.util.Routes;
+
+import java.io.IOException;
 
 public class ReservationFormController {
     public AnchorPane reservationAP;
@@ -40,9 +44,19 @@ public class ReservationFormController {
     public JFXButton btnReserve;
 
     public void homeOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD,reservationAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void backOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD,reservationAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void cmbSidOnAction(ActionEvent actionEvent) {
