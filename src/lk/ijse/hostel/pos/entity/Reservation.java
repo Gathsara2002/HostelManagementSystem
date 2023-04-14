@@ -21,7 +21,7 @@ public class Reservation {
     private String res_id;
     private LocalDate date;
     private String status;
-    private double advance;
+    private double payment;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_Id", referencedColumnName = "Student_Id")

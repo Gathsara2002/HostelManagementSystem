@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="studentAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.StudentForm">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutY="6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="btnHome" layoutX="55.0" layoutY="744.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="35.0" layoutY="724.0" onDragDetected="#backOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/backtoicon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="55.0" layoutY="9.0" text="Hostel Management System" textFill="#dc0d0d" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="9.0">
+         <font>
+            <Font name="Berlin Sans FB" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="82.0" text="Manage Student">
+         <font>
+            <Font name="Century Schoolbook" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtAddress" layoutX="1000.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Address :" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtStdName" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student Name :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDate" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Date Of Birth  :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Contact No :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSid" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student ID :" AnchorPane.topAnchor="185.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXRadioButton fx:id="rbtnMale" layoutX="1100.0" layoutY="279.0" onAction="#rbtnMaleOnAction" prefHeight="30.0" prefWidth="106.0" text="Male">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <Label fx:id="lblGender" layoutX="1000.0" layoutY="278.0" text="Gender  : ">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="rbtnFemale" layoutX="1200.0" layoutY="279.0" onAction="#rbtnFemaleOnAction" prefHeight="30.0" prefWidth="107.0" text="Female">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <TableView fx:id="tblStudent" layoutX="100.0" layoutY="371.0" prefHeight="300.0" prefWidth="900.0" AnchorPane.leftAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="colSid" prefWidth="150.0" text="Student ID" />
+            <TableColumn fx:id="colName" prefWidth="150.0" text="Student Name" />
+            <TableColumn fx:id="colAddress" prefWidth="150.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="150.0" text="Contact No" />
+            <TableColumn fx:id="colDob" prefWidth="150.0" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="150.0" text="Gender" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnNewStd" buttonType="RAISED" layoutX="1099.0" layoutY="86.0" onAction="#newStdaOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Student" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1103.0" layoutY="504.0" onAction="#saveOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #32ff7e;" text="Save" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="1100.0" layoutY="568.0" onAction="#updateOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cd84f1;" text="Update" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="1141.0" layoutY="627.0" onAction="#deleteOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fc5c65;" text="Delete" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <DatePicker fx:id="datePicker" layoutX="699.0" layoutY="267.0" prefHeight="26.0" prefWidth="150.0" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

@@ -18,6 +18,7 @@ public class DashBordForm {
     public Button btnRoom;
     public Button btnStudent;
     public Circle btnHome;
+    public Button btnKeyMoney;
 
     public void manageUserOnAction(ActionEvent actionEvent) {
     }
@@ -32,5 +33,8 @@ public class DashBordForm {
     }
 
     public void homeOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void btnKeyMoneyOnAction(ActionEvent actionEvent) {
     }
 }
