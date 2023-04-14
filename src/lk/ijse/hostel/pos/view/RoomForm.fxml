@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="roomAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.RoomFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutY="6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="btnHome" layoutX="55.0" layoutY="744.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="35.0" layoutY="724.0" onDragDetected="#backOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/backtoicon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="55.0" layoutY="9.0" text="Hostel Management System" textFill="#dc0d0d" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="9.0">
+         <font>
+            <Font name="Berlin Sans FB" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="82.0" text="Manage Room">
+         <font>
+            <Font name="Century Schoolbook" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtRoomType" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Room Type :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="QTY :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtKeyMoney" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Key Money :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtRoomId" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Room ID :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="185.0">
+         <font>
+            <Font name="Californian FB" size="20.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tblRoom" layoutX="100.0" layoutY="371.0" prefHeight="300.0" prefWidth="800.0" AnchorPane.leftAnchor="175.0">
+         <columns>
+            <TableColumn fx:id="colRoomId" prefWidth="200.0" text="Room ID" />
+            <TableColumn fx:id="colType" prefWidth="200.0" text="Room Rype" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="200.0" text="Key Money" />
+            <TableColumn fx:id="colQty" prefWidth="200.0" text="QTY" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddRoom" buttonType="RAISED" layoutX="1099.0" layoutY="86.0" onAction="#newRoomOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7efff5;" text="+ New Room" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1103.0" layoutY="504.0" onAction="#saveOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #32ff7e;" text="Save" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="1100.0" layoutY="568.0" onAction="#updateOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cd84f1;" text="Update" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="1141.0" layoutY="627.0" onAction="#deleteOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fc5c65;" text="Delete" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

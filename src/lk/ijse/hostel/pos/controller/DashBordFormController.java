@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
-public class DashBordForm {
+public class DashBordFormController {
     public AnchorPane dashBoardAP;
     public Button btnUser;
     public Button btnReserve;

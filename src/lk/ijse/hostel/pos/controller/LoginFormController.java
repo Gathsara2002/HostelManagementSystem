@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class LoginForm {
+public class LoginFormController {
 
     public AnchorPane loginAP;
     public JFXButton btnLogin;

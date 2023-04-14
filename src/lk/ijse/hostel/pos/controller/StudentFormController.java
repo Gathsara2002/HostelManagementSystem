@@ -18,7 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
-public class StudentForm {
+public class StudentFormController {
 
     public AnchorPane studentAP;
     public Circle btnHome;

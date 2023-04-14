@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="dashBoardAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.DashBordForm">
+<AnchorPane fx:id="dashBoardAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.DashBordFormController">
    <children>
       <Label layoutX="452.0" layoutY="86.0" prefHeight="48.0" prefWidth="529.0" text="ADMIN DASHBOARD" textFill="#32ff7e" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="85.0">
          <font>

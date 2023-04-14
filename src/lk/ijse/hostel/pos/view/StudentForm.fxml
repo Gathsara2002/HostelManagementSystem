@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.StudentForm">
+<AnchorPane fx:id="studentAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.StudentFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutY="6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Circle fx:id="btnHome" layoutX="55.0" layoutY="744.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
