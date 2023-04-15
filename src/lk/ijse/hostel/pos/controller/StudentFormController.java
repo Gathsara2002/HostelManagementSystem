@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
+import lk.ijse.hostel.pos.view.tm.StudentTM;
 
 import java.io.IOException;
 
@@ -36,7 +37,7 @@ public class StudentFormController {
     public JFXRadioButton rbtnMale;
     public Label lblGender;
     public JFXRadioButton rbtnFemale;
-    public TableView tblStudent;
+    public TableView<StudentTM> tblStudent;
     public TableColumn colSid;
     public TableColumn colName;
     public TableColumn colAddress;

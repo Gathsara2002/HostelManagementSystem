@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
+import lk.ijse.hostel.pos.view.tm.RoomTM;
 
 import java.io.IOException;
 
@@ -28,7 +29,7 @@ public class RoomFormController {
     public JFXTextField txtQty;
     public JFXTextField txtKeyMoney;
     public JFXTextField txtRoomId;
-    public TableView tblRoom;
+    public TableView<RoomTM> tblRoom;
     public TableColumn colRoomId;
     public TableColumn colType;
     public TableColumn colKeyMoney;

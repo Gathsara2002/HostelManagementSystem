@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
+import lk.ijse.hostel.pos.view.tm.ReservationTM;
 
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public class FindKeyMoneyFormController {
     public Circle btnHome;
     public ImageView btnBack;
     public JFXComboBox cmbResNo;
-    public TableView tblFindeKeyMoney;
+    public TableView<ReservationTM> tblFindeKeyMoney;
     public TableColumn colResNo;
     public TableColumn colRoomId;
     public TableColumn colSid;
