@@ -1,12 +1,12 @@
 /**
  * @author : Gathsara
- * created : 4/15/2023 -- 3:02 PM
+ * created : 4/15/2023 -- 3:10 PM
  **/
 
 package lk.ijse.hostel.pos.dao.custom.impl;
 
-import lk.ijse.hostel.pos.dao.custom.RoomDAO;
-import lk.ijse.hostel.pos.entity.Room;
+import lk.ijse.hostel.pos.dao.custom.ReservationDAO;
+import lk.ijse.hostel.pos.entity.Reservation;
 import lk.ijse.hostel.pos.util.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,34 +15,34 @@ import org.hibernate.query.Query;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RoomDAOImpl implements RoomDAO {
+public class ReservationDAOImpl implements ReservationDAO {
     @Override
-    public ArrayList<Room> getAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Room> roomList;
+    public ArrayList<Reservation> getAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Reservation> reservationList;
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery("FROM room");
-        roomList = (ArrayList<Room>) query.list();
+        Query query = session.createQuery("FROM reservation ");
+        reservationList = (ArrayList<Reservation>) query.list();
         transaction.commit();
         session.close();
-        return roomList;
+        return reservationList;
     }
 
     @Override
-    public boolean save(Room room) throws SQLException, ClassNotFoundException {
+    public boolean save(Reservation reservation) throws SQLException, ClassNotFoundException {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(room);
+        session.save(reservation);
         transaction.commit();
         session.close();
         return true;
     }
 
     @Override
-    public boolean update(Room room) throws SQLException, ClassNotFoundException {
+    public boolean update(Reservation reservation) throws SQLException, ClassNotFoundException {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.update(room);
+        session.update(reservation);
         transaction.commit();
         session.close();
         return true;
@@ -53,21 +53,21 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         //use lazy fetching
-        Room room = session.get(Room.class, id);
-        session.delete(room);
+        Reservation reservation = session.get(Reservation.class, id);
+        session.delete(reservation);
         transaction.commit();
         session.close();
         return true;
     }
 
     @Override
-    public Room search(String id) throws SQLException, ClassNotFoundException {
+    public Reservation search(String id) throws SQLException, ClassNotFoundException {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Room room = session.get(Room.class, id);
+        Reservation reservation = session.get(Reservation.class, id);
         transaction.commit();
         session.close();
-        return room;
+        return reservation;
     }
 
     @Override
