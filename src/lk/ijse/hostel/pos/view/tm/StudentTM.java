@@ -1,0 +1,24 @@
+/**
+ * @author : Gathsara
+ * created : 4/15/2023 -- 3:57 PM
+ **/
+
+package lk.ijse.hostel.pos.view.tm;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudentTM {
+    private String student_id;
+    private String name;
+    private String address;
+    private String contact_no;
+    private LocalDate dob;
+    private String gender;
+}
