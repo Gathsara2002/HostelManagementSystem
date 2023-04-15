@@ -23,7 +23,10 @@ public class User {
     private String userName;
     @Column
     private String name;
+    @Column
     private String address;
+    @Column
     private String contact_no;
+    @Column
     private String Password;
 }

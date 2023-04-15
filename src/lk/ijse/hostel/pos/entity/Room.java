@@ -22,7 +22,9 @@ public class Room {
     private String room_type_id;
     @Column
     private String type;
+    @Column
     private String key_money;
+    @Column
     private int qty;
 
     @OneToMany(mappedBy = "room_type_id", fetch = FetchType.EAGER)

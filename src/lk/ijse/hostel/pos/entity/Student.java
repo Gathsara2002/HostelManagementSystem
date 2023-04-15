@@ -25,9 +25,13 @@ public class Student {
     private String student_id;
     @Column
     private String name;
+    @Column
     private String address;
+    @Column
     private String contact_no;
+    @Column
     private LocalDate dob;
+    @Column
     private String gender;
 
     @OneToMany(mappedBy = "student_id",fetch = FetchType.EAGER)

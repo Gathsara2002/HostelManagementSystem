@@ -19,8 +19,11 @@ import java.time.LocalDate;
 public class Reservation {
     @Id
     private String res_id;
+    @Column
     private LocalDate date;
+    @Column
     private String status;
+    @Column
     private double payment;
 
     @ManyToOne(cascade = CascadeType.ALL)
