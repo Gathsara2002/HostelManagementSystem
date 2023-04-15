@@ -3,7 +3,7 @@
  * created : 4/15/2023 -- 2:28 PM
  **/
 
-package lk.ijse.hostel.pos.dao.impl;
+package lk.ijse.hostel.pos.dao.custom.impl;
 
 import lk.ijse.hostel.pos.dao.custom.StudentDAO;
 import lk.ijse.hostel.pos.entity.Student;
