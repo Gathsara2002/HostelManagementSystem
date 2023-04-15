@@ -1,9 +1,9 @@
 /**
  * @author : Gathsara
- * created : 4/14/2023 -- 7:54 PM
+ * created : 4/15/2023 -- 4:01 PM
  **/
 
-package lk.ijse.hostel.pos.dto;
+package lk.ijse.hostel.pos.view.tm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservationDT0 {
+public class ReservationTM {
     private String res_id;
     private LocalDate date;
     private String status;
