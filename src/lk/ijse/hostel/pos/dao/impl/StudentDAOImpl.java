@@ -32,26 +32,53 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean save(Student student) throws SQLException, ClassNotFoundException {
-        return false;
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(student);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
     public boolean update(Student student) throws SQLException, ClassNotFoundException {
-        return false;
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(student);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
-    public boolean delete(String s) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        //use lazy fetching
+        Student student = session.get(Student.class, id);
+        session.delete(student);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
-    public Student search(String s) throws SQLException, ClassNotFoundException {
-        return null;
+    public Student search(String id) throws SQLException, ClassNotFoundException {
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Student student = session.get(Student.class, id);
+        transaction.commit();
+        session.close();
+        return student;
     }
 
     @Override
     public boolean exist(String s) throws SQLException, ClassNotFoundException {
-        return false;
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 }
