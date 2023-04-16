@@ -130,6 +130,16 @@ public class StudentFormController implements Initializable {
         btnDelete.setDisable(false);
     }
 
+    //-----Ser student's ids to combo box
 
-
+    private void setStudentIds(){
+        try {
+            ArrayList<StudentDTO> allStudent = studentBO.getAllStudent();
+            for (StudentDTO studentDTO : allStudent) {
+                cmbStdId.setValue(studentDTO.getStudent_id());
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
