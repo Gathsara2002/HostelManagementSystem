@@ -98,10 +98,22 @@ public class StudentFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       // initUi();
+         initUi();
     }
 
+    private void initUi() {
+        txtSid.setDisable(true);
+        txtAddress.setDisable(true);
+        txtContact.setDisable(true);
+        txtStdName.setDisable(true);
+        rbtnFemale.setDisable(true);
+        rbtnMale.setDisable(true);
+        datePicker.setDisable(true);
 
+        btnSave.setDisable(true);
+        btnUpdate.setDisable(true);
+        btnDelete.setDisable(true);
+    }
 
 
 }
