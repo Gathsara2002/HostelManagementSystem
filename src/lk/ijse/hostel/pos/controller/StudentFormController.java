@@ -115,5 +115,21 @@ public class StudentFormController implements Initializable {
         btnDelete.setDisable(true);
     }
 
+    //-----Set buttons and text fields active
+
+    private void setActive() {
+        txtSid.setDisable(false);
+        txtAddress.setDisable(false);
+        txtContact.setDisable(false);
+        txtStdName.setDisable(false);
+        rbtnFemale.setDisable(false);
+        rbtnMale.setDisable(false);
+        datePicker.setDisable(false);
+        btnSave.setDisable(false);
+        btnUpdate.setDisable(false);
+        btnDelete.setDisable(false);
+    }
+
+
 
 }
