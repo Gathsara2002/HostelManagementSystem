@@ -10,21 +10,28 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.bo.custom.StudentBO;
+import lk.ijse.hostel.pos.bo.custom.impl.StudentBOImpl;
+import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
 import lk.ijse.hostel.pos.view.tm.StudentTM;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class StudentFormController {
+public class StudentFormController implements Initializable {
+
+    StudentBO studentBO = new StudentBOImpl();
 
     public AnchorPane studentAP;
     public Circle btnHome;
@@ -53,7 +60,7 @@ public class StudentFormController {
 
     public void homeOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,studentAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, studentAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,7 +68,7 @@ public class StudentFormController {
 
     public void backOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,studentAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, studentAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -86,5 +93,15 @@ public class StudentFormController {
     }
 
     public void sidOnAction(ActionEvent actionEvent) {
+
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       // initUi();
+    }
+
+
+
+
 }

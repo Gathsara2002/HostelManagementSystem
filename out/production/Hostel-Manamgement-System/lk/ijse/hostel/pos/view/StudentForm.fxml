@@ -58,27 +58,27 @@
             <Font name="Century Schoolbook" size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtAddress" layoutX="1000.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Address :" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="180.0">
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="1000.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText="Address :" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStdName" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student Name :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="180.0">
+      <JFXTextField fx:id="txtStdName" labelFloat="true" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" promptText="Student Name :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtDate" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Date Of Birth  :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="260.0">
+      <JFXTextField fx:id="txtDate" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText="Date Of Birth  :" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="260.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtContact" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Contact No :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="260.0">
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="300.0" promptText="Contact No :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="260.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtSid" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student ID :" AnchorPane.topAnchor="185.0">
+      <JFXTextField fx:id="txtSid" labelFloat="true" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" AnchorPane.topAnchor="185.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
