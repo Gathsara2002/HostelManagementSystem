@@ -81,4 +81,20 @@ public class StudentDAOImpl implements StudentDAO {
         session.close();
         return true;
     }
+
+    @Override
+    public String generateNewId() throws SQLException, ClassNotFoundException {
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createSQLQuery("SELECT student_id FROM student ORDER BY student_id DESC LIMIT BY 1");
+        String newSId = (String) query.uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if (newSId != null) {
+            int x = Integer.parseInt(newSId.replace("STD-", "")) + 1;
+            return String.format("STD-%03d", x);
+        }
+        return "STD-001";
+    }
 }

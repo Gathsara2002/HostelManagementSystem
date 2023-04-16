@@ -8,6 +8,7 @@ package lk.ijse.hostel.pos.dao;
 import lk.ijse.hostel.pos.dao.custom.impl.*;
 
 public class DAOFactory {
+
     private static DAOFactory daoFactory;
 
     private DAOFactory() {

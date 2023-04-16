@@ -14,6 +14,7 @@ import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReservationDAOImpl implements ReservationDAO {
     @Override
@@ -78,5 +79,21 @@ public class ReservationDAOImpl implements ReservationDAO {
         transaction.commit();
         session.close();
         return true;
+    }
+
+    @Override
+    public String generateNewId() throws SQLException, ClassNotFoundException {
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createSQLQuery("SELECT res_id FROM reservation ORDER BY res_id DESC LIMIT BY 1");
+        String newId = (String) query.uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if (newId != null) {
+            int x = Integer.parseInt(newId.replace("RES-", "")) + 1;
+            return String.format("RES-%03d", x);
+        }
+        return "RES-001";
     }
 }
