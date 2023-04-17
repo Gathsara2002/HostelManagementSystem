@@ -115,6 +115,7 @@ public class StudentFormController implements Initializable {
             tblStudent.getItems().add(new StudentTM(sid, name, address, contact, dob, gender));
             clearFields();
             loadAllStudents();
+            setStudentIds();
             new Alert(Alert.AlertType.CONFIRMATION, "Student Added Successfully !").show();
         } catch (SQLException | ClassNotFoundException throwables) {
             new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
@@ -140,6 +141,7 @@ public class StudentFormController implements Initializable {
             studentBO.updateStudent(new StudentDTO(sid, name, address, contact, dob, gender));
             clearFields();
             loadAllStudents();
+            setStudentIds();
             new Alert(Alert.AlertType.CONFIRMATION, "Student updated successfully !").show();
 
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -154,9 +156,10 @@ public class StudentFormController implements Initializable {
         try {
             boolean isDeleted = studentBO.deleteStudent(value);
             if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Student deleted successfully").show();
                 clearFields();
                 loadAllStudents();
+                setStudentIds();
+                new Alert(Alert.AlertType.CONFIRMATION, "Student deleted successfully").show();
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
