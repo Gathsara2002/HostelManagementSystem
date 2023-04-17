@@ -8,6 +8,8 @@ package lk.ijse.hostel.pos.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -17,15 +19,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.bo.BOFactory;
+import lk.ijse.hostel.pos.bo.custom.RoomBO;
+import lk.ijse.hostel.pos.dto.RoomDTO;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
 import lk.ijse.hostel.pos.view.tm.RoomTM;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RoomFormController implements Initializable {
+
+    private final RoomBO roomBO = (RoomBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.ROOM);
+
     public AnchorPane roomAP;
     public Circle btnHome;
     public ImageView btnBack;
@@ -97,5 +107,20 @@ public class RoomFormController implements Initializable {
         colType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colKeyMoney.setCellValueFactory(new PropertyValueFactory<>("key_money"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+    }
+
+    //--- Set room ids to cob box
+
+    private void setRoomIds() {
+        ObservableList<String> roomIds = FXCollections.observableArrayList();
+        try {
+            ArrayList<RoomDTO> allRooms = roomBO.getAllRooms();
+            for (RoomDTO allRoom : allRooms) {
+                roomIds.add(allRoom.getRoom_type_id());
+            }
+            cmbRoomId.setItems(roomIds);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
