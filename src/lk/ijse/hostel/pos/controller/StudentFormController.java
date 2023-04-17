@@ -91,6 +91,7 @@ public class StudentFormController implements Initializable {
         try {
             newId = studentBO.generateNewId();
             txtSid.setText(newId);
+            clearFields();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
@@ -111,6 +112,7 @@ public class StudentFormController implements Initializable {
         try {
             studentBO.saveStudent(new StudentDTO(sid, name, address, contact, dob, gender));
             tblStudent.getItems().add(new StudentTM(sid, name, address, contact, dob, gender));
+            clearFields();
             new Alert(Alert.AlertType.CONFIRMATION, "Student Added Successfully !").show();
         } catch (SQLException | ClassNotFoundException throwables) {
             new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
@@ -134,6 +136,7 @@ public class StudentFormController implements Initializable {
 
         try {
             studentBO.updateStudent(new StudentDTO(sid, name, address, contact, dob, gender));
+            clearFields();
             new Alert(Alert.AlertType.CONFIRMATION, "Student updated successfully !").show();
 
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -149,7 +152,7 @@ public class StudentFormController implements Initializable {
             boolean isDeleted = studentBO.deleteStudent(value);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Student deleted successfully").show();
-                initUi();
+                clearFields();
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -260,5 +263,15 @@ public class StudentFormController implements Initializable {
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact_no"));
         colDob.setCellValueFactory(new PropertyValueFactory<>("dob"));
         colGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+    }
+
+    //--- to clear text fields
+
+    private void clearFields(){
+        txtStdName.clear();
+        txtAddress.clear();
+        txtContact.clear();
+        datePicker.getEditor().clear();
+        txtStdName.requestFocus();
     }
 }
