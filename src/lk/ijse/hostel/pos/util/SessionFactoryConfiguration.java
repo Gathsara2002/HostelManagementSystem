@@ -28,7 +28,7 @@ public class SessionFactoryConfiguration {
     }
 
     public static SessionFactoryConfiguration getInstance() {
-        return (sessionFactoryConfiguration == null) ?
+        return sessionFactoryConfiguration == null ?
                 sessionFactoryConfiguration = new SessionFactoryConfiguration()
                 : sessionFactoryConfiguration;
     }

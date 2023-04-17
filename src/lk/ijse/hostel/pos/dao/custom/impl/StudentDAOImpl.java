@@ -86,7 +86,7 @@ public class StudentDAOImpl implements StudentDAO {
     public String generateNewId() throws SQLException, ClassNotFoundException {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createSQLQuery("SELECT student_id FROM student ORDER BY student_id DESC LIMIT BY 1");
+        Query query = session.createSQLQuery("SELECT student_id FROM student ORDER BY student_id DESC LIMIT  1");
         String newSId = (String) query.uniqueResult();
         transaction.commit();
         session.close();

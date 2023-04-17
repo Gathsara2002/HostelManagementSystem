@@ -9,7 +9,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -26,6 +29,7 @@ import lk.ijse.hostel.pos.view.tm.StudentTM;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -81,24 +85,86 @@ public class StudentFormController implements Initializable {
     }
 
     public void newStdaOnAction(ActionEvent actionEvent) {
+        setActive();
+        String newId = null;
+        try {
+            newId = studentBO.generateNewId();
+            txtSid.setText(newId);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public void saveOnAction(ActionEvent actionEvent) {
+        String sid = txtSid.getText();
+        String name = txtStdName.getText();
+        String address = txtAddress.getText();
+        String contact = txtContact.getText();
+        String gender = "Male";
+        if (rbtnFemale.isSelected()) {
+            gender = "Female";
+        } else {
+            gender = "Male";
+        }
+        LocalDate dob = datePicker.getValue();
+        try {
+            studentBO.saveStudent(new StudentDTO(sid, name, address, contact, dob, gender));
+            tblStudent.getItems().add(new StudentTM(sid, name, address, contact, dob, gender));
+            new Alert(Alert.AlertType.CONFIRMATION, "Student Added Successfully !").show();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
+        }
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        String sid = txtSid.getText();
+        String name = txtStdName.getText();
+        String address = txtAddress.getText();
+        String contact = txtContact.getText();
+        String gender = "Male";
+        if (rbtnFemale.isSelected()) {
+            gender = "Female";
+        } else {
+            gender = "Male";
+        }
+        LocalDate dob = datePicker.getValue();
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
     }
 
-    public void sidOnAction(ActionEvent actionEvent) {
+    //--- Create combo box for select student ids
 
+    public void sidOnAction(ActionEvent actionEvent) {
+        String value = (String) cmbStdId.getValue();
+        try {
+            StudentDTO studentDTO = studentBO.searchStudent(value);
+            fillStudentData(studentDTO);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    //----Set student data when user select combo box
+
+    private void fillStudentData(StudentDTO studentDTO) {
+        txtSid.setText(studentDTO.getStudent_id());
+        txtContact.setText(studentDTO.getContact_no());
+        txtAddress.setText(studentDTO.getAddress());
+        txtStdName.setText(studentDTO.getName());
+        datePicker.setValue(studentDTO.getDob());
+
+        if (studentDTO.getGender().equalsIgnoreCase("Male")){
+            rbtnMale.fire();
+        }else {
+            rbtnFemale.fire();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-         initUi();
+        initUi();
+        setStudentIds();
     }
 
     private void initUi() {
@@ -132,14 +198,16 @@ public class StudentFormController implements Initializable {
 
     //-----Ser student's ids to combo box
 
-    private void setStudentIds(){
+    private void setStudentIds() {
+        ObservableList<String> list = FXCollections.observableArrayList();
         try {
             ArrayList<StudentDTO> allStudent = studentBO.getAllStudent();
             for (StudentDTO studentDTO : allStudent) {
-                cmbStdId.setValue(studentDTO.getStudent_id());
+                list.add(studentDTO.getStudent_id());
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
+        cmbStdId.setItems(list);
     }
 }

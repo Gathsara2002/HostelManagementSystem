@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -83,17 +84,23 @@
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXRadioButton fx:id="rbtnMale" layoutX="1100.0" layoutY="279.0" onAction="#rbtnMaleOnAction" prefHeight="30.0" prefWidth="106.0" text="Male">
+      <JFXRadioButton fx:id="rbtnMale" layoutX="1100.0" layoutY="279.0" onAction="#rbtnMaleOnAction" prefHeight="30.0" prefWidth="106.0" selected="true" text="Male">
          <font>
             <Font size="15.0" />
          </font>
+         <selectedColor>
+            <Color red="0.20479987561702728" green="0.1973879188299179" blue="0.6421052813529968" />
+         </selectedColor>
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
       </JFXRadioButton>
       <Label fx:id="lblGender" layoutX="1000.0" layoutY="278.0" text="Gender  : ">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </Label>
-      <JFXRadioButton fx:id="rbtnFemale" layoutX="1200.0" layoutY="279.0" onAction="#rbtnFemaleOnAction" prefHeight="30.0" prefWidth="107.0" text="Female">
+      <JFXRadioButton fx:id="rbtnFemale" layoutX="1200.0" layoutY="279.0" onAction="#rbtnFemaleOnAction" prefHeight="30.0" prefWidth="107.0" text="Female" toggleGroup="$gender">
          <font>
             <Font size="15.0" />
          </font>
