@@ -131,4 +131,19 @@ public class RoomFormController implements Initializable {
         txtKeyMoney.clear();
         txtRoomId.requestFocus();
     }
+
+    //--- Load rooms to table
+
+    private void loadAllRooms() {
+        tblRoom.getItems().clear();
+        try {
+            ArrayList<RoomDTO> allRooms = roomBO.getAllRooms();
+            for (RoomDTO roomDTO : allRooms) {
+                tblRoom.getItems().add(new RoomTM(roomDTO.getRoom_type_id(), roomDTO.getType(),
+                        roomDTO.getKey_money(), roomDTO.getQty()));
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
