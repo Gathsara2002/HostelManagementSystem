@@ -123,4 +123,12 @@ public class RoomFormController implements Initializable {
             throwables.printStackTrace();
         }
     }
+
+    private void clearFields() {
+        txtRoomId.clear();
+        txtRoomType.clear();
+        txtQty.clear();
+        txtKeyMoney.clear();
+        txtRoomId.requestFocus();
+    }
 }
