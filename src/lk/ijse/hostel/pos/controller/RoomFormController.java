@@ -146,4 +146,14 @@ public class RoomFormController implements Initializable {
             throwables.printStackTrace();
         }
     }
+
+    private void setActive() {
+        txtRoomId.setDisable(false);
+        txtRoomType.setDisable(false);
+        txtKeyMoney.setDisable(false);
+        txtQty.setDisable(false);
+        btnSave.setDisable(false);
+        btnUpdate.setDisable(false);
+        btnDelete.setDisable(false);
+    }
 }
