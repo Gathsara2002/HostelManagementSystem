@@ -61,11 +61,12 @@ public class UserFormController implements Initializable {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+
         String userName = txtUsername.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
-        String passWord = pfPassword.getText();
+        String passWord = txtShowPassword.getText();
 
         try {
             boolean isUpdated = userBO.updateUser(new UserDTO(userName, name, address, contact, passWord));
@@ -81,7 +82,15 @@ public class UserFormController implements Initializable {
     }
 
     public void showPwOnAction(MouseEvent mouseEvent) {
-        String passWord = pfPassword.getText();
+        String id=txtUsername.getText();
+        String passWord=null;
+        try {
+            UserDTO userDTO = userBO.searchUser(id);
+            passWord=userDTO.getPassword();
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
         txtShowPassword.setText(passWord);
         pfPassword.setVisible(false);
         btnHidePw.setDisable(false);
@@ -92,7 +101,14 @@ public class UserFormController implements Initializable {
     }
 
     public void hidePwOnAction(MouseEvent mouseEvent) {
-        String passWord = txtShowPassword.getText();
+        String id=txtUsername.getText();
+        String passWord=null;
+        try {
+            UserDTO userDTO = userBO.searchUser(id);
+            passWord=userDTO.getPassword();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
         pfPassword.setText(passWord);
         txtShowPassword.setVisible(false);
         btnHidePw.setDisable(true);
