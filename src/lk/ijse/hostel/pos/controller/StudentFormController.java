@@ -12,7 +12,6 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,8 +19,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.bo.BOFactory;
 import lk.ijse.hostel.pos.bo.custom.StudentBO;
-import lk.ijse.hostel.pos.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
@@ -36,7 +35,7 @@ import java.util.ResourceBundle;
 
 public class StudentFormController implements Initializable {
 
-    StudentBO studentBO = new StudentBOImpl();
+    private final StudentBO studentBO = (StudentBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.STUDENT);
 
     public AnchorPane studentAP;
     public Circle btnHome;
