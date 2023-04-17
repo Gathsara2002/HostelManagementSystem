@@ -109,7 +109,21 @@ public class RoomFormController implements Initializable {
         }
     }
 
+    //--- delete room from system
+
     public void deleteOnAction(ActionEvent actionEvent) {
+        String roomId = txtRoomId.getText();
+        try {
+            boolean isDeleted = roomBO.deleteRooms(roomId);
+            if (isDeleted) {
+                loadAllRooms();
+                setRoomIds();
+                new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully !").show();
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        btnAddRoom.fire();
     }
 
     public void backOnAction(MouseEvent mouseEvent) {
