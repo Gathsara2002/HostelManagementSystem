@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -88,5 +89,13 @@ public class RoomFormController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initUi();
+        setCellValueFactory();
+    }
+
+    private void setCellValueFactory() {
+        colRoomId.setCellValueFactory(new PropertyValueFactory<>("room_type_id"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        colKeyMoney.setCellValueFactory(new PropertyValueFactory<>("key_money"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
     }
 }
