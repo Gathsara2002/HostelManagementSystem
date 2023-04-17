@@ -64,6 +64,8 @@ public class RoomFormController implements Initializable {
     }
 
     public void newRoomOnAction(ActionEvent actionEvent) {
+        setActive();
+        txtRoomId.requestFocus();
     }
 
     //--- Save room data

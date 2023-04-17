@@ -8,6 +8,7 @@ package lk.ijse.hostel.pos.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -28,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
 
-    private final UserBO userBO= (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+    private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
 
     public AnchorPane userAP;
     public Circle btnHome;
@@ -41,10 +42,11 @@ public class UserFormController implements Initializable {
     public TextField txtName;
     public TextField txtAddress;
     public TextField txtContact;
+    public TextField txtShowPassword;
 
     public void homeOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,userAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, userAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,7 +54,7 @@ public class UserFormController implements Initializable {
 
     public void backOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,userAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, userAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,6 +69,10 @@ public class UserFormController implements Initializable {
 
         try {
             boolean isUpdated = userBO.updateUser(new UserDTO(userName, name, address, contact, passWord));
+            if (isUpdated) {
+                loadProfile();
+                new Alert(Alert.AlertType.CONFIRMATION,"User updated !").show();
+            }
 
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -75,6 +81,7 @@ public class UserFormController implements Initializable {
     }
 
     public void showPwOnAction(MouseEvent mouseEvent) {
+
     }
 
     public void hidePwOnAction(MouseEvent mouseEvent) {
@@ -82,12 +89,13 @@ public class UserFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        loadProfile();
+        btnHidePw.setDisable(true);
     }
 
     //--- Load user data to ui
 
-    private void loadProfile(){
+    private void loadProfile() {
         try {
             ArrayList<UserDTO> allUser = userBO.getAllUser();
             for (UserDTO userDTO : allUser) {

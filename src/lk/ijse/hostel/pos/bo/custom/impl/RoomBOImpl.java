@@ -25,7 +25,7 @@ public class RoomBOImpl implements RoomBO {
         ArrayList<Room> all = roomDAO.getAll();
         ArrayList<RoomDTO> allRoom = new ArrayList();
         for (Room room : all) {
-            all.add(new Room(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
+            allRoom.add(new RoomDTO(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
         }
         return allRoom;
     }

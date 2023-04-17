@@ -56,22 +56,22 @@
             <Font name="Century Schoolbook" size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtRoomType" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="400.0" promptText="Room Type :" text="Room Type :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="180.0">
+      <JFXTextField fx:id="txtRoomType" labelFloat="true" layoutX="550.0" layoutY="183.0" prefHeight="35.0" prefWidth="400.0" promptText="Room Type :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQty" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="QTY :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="550.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText="QTY :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtKeyMoney" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Key Money :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="260.0">
+      <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="100.0" layoutY="263.0" prefHeight="35.0" prefWidth="400.0" promptText="Key Money :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="260.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtRoomId" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="400.0" promptText=" Student ID  :" text="Room ID :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="185.0">
+      <JFXTextField fx:id="txtRoomId" labelFloat="true" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="400.0" promptText="Room ID :" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="185.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
