@@ -29,4 +29,11 @@ public class Room {
 
     @OneToMany(mappedBy = "room_type_id", fetch = FetchType.EAGER)
     private List<Reservation> roomDetails = new ArrayList<>();
+
+    public Room(String room_type_id, String type, String key_money, int qty) {
+        this.room_type_id = room_type_id;
+        this.type = type;
+        this.key_money = key_money;
+        this.qty = qty;
+    }
 }

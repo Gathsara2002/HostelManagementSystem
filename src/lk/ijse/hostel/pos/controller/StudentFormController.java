@@ -96,6 +96,8 @@ public class StudentFormController implements Initializable {
         }
     }
 
+    //--- Save student
+
     public void saveOnAction(ActionEvent actionEvent) {
         String sid = txtSid.getText();
         String name = txtStdName.getText();
