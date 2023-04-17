@@ -18,39 +18,42 @@ import java.util.ArrayList;
 
 public class RoomBOImpl implements RoomBO {
 
-    private final RoomDAO roomDAO= (RoomDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.ROOM);
+    private final RoomDAO roomDAO = (RoomDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.ROOM);
 
     @Override
     public ArrayList<RoomDTO> getAllRooms() throws SQLException, ClassNotFoundException {
         ArrayList<Room> all = roomDAO.getAll();
         ArrayList<RoomDTO> allRoom = new ArrayList();
         for (Room room : all) {
-           all.add(new Room(room.getRoom_type_id(),room.getType(),room.getKey_money(),room.getQty()));
+            all.add(new Room(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
         }
-        return allRoom;    }
+        return allRoom;
+    }
 
     @Override
     public RoomDTO searchAllRooms(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        Room search = roomDAO.search(id);
+        return new RoomDTO(search.getRoom_type_id(), search.getType(), search.getKey_money(), search.getQty());
+
     }
 
     @Override
     public boolean saveRooms(RoomDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return roomDAO.save(new Room(dto.getRoom_type_id(), dto.getType(), dto.getKey_money(), dto.getQty()));
     }
 
     @Override
     public boolean updateRooms(RoomDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return roomDAO.save(new Room(dto.getRoom_type_id(), dto.getType(), dto.getKey_money(), dto.getQty()));
     }
 
     @Override
     public boolean deleteRooms(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        return roomDAO.delete(id);
     }
 
     @Override
     public boolean existRoomsID(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        return roomDAO.exist(id);
     }
 }
