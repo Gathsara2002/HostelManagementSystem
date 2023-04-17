@@ -116,6 +116,8 @@ public class StudentFormController implements Initializable {
         }
     }
 
+    //--- Update student data
+
     public void updateOnAction(ActionEvent actionEvent) {
         String sid = txtSid.getText();
         String name = txtStdName.getText();
@@ -128,6 +130,14 @@ public class StudentFormController implements Initializable {
             gender = "Male";
         }
         LocalDate dob = datePicker.getValue();
+
+        try {
+            studentBO.updateStudent(new StudentDTO(sid,name,address,contact,dob,gender));
+            new Alert(Alert.AlertType.CONFIRMATION, "Student updated successfully !").show();
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            new Alert(Alert.AlertType.ERROR, "Something happened !").show();
+        }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
@@ -145,7 +155,7 @@ public class StudentFormController implements Initializable {
         }
     }
 
-    //----Set student data when user select combo box
+    //--- Set student data when user select combo box
 
     private void fillStudentData(StudentDTO studentDTO) {
         txtSid.setText(studentDTO.getStudent_id());
