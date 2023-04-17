@@ -222,4 +222,19 @@ public class StudentFormController implements Initializable {
         }
         cmbStdId.setItems(list);
     }
+
+    //--- Load students to table
+
+    private void loadAllStudents(){
+        tblStudent.getItems().clear();
+        try {
+            ArrayList<StudentDTO> allStudent = studentBO.getAllStudent();
+            for (StudentDTO studentDTO : allStudent) {
+                tblStudent.getItems().add(new StudentTM(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),
+                        studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
