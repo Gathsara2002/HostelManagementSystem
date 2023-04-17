@@ -89,7 +89,24 @@ public class RoomFormController implements Initializable {
         btnAddRoom.fire();
     }
 
+    //--- Update room details
+
     public void updateOnAction(ActionEvent actionEvent) {
+        String id = txtRoomId.getText();
+        String type = txtRoomType.getText();
+        String keyMoney = txtKeyMoney.getText();
+        int qty = Integer.parseInt(txtQty.getText());
+        try {
+            boolean isUpdated = roomBO.updateRooms(new RoomDTO(id, type, keyMoney, qty));
+            if (isUpdated) {
+                clearFields();
+                setRoomIds();
+                loadAllRooms();
+                new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully!").show();
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
+        }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
