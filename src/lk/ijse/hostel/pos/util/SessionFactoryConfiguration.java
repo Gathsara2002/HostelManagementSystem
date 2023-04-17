@@ -19,12 +19,20 @@ public class SessionFactoryConfiguration {
     private SessionFactory sessionFactory;
 
     private SessionFactoryConfiguration() {
-        Configuration configuration = new Configuration().configure().
-                addAnnotatedClass(User.class)
+       /* Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Room.class)
                 .addAnnotatedClass(Reservation.class);
-        sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = configuration.buildSessionFactory();*/
+
+        sessionFactory = new Configuration()
+                .mergeProperties(Utility.getProperties())
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Room.class)
+                .addAnnotatedClass(Reservation.class)
+                .buildSessionFactory();
     }
 
     public static SessionFactoryConfiguration getInstance() {
