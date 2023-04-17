@@ -118,6 +118,7 @@ public class RoomFormController implements Initializable {
         try {
             boolean isDeleted = roomBO.deleteRooms(roomId);
             if (isDeleted) {
+                clearFields();
                 loadAllRooms();
                 setRoomIds();
                 new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully !").show();

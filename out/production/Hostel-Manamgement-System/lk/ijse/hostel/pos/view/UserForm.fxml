@@ -93,14 +93,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ImageView fx:id="btnshowPassword" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="27.0" layoutX="896.0" layoutY="534.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnshowPassword" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="27.0" layoutX="962.0" layoutY="534.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/view.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnHidePw" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" layoutX="896.0" layoutY="534.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/hide.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtUsername" layoutX="350.0" layoutY="366.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
@@ -123,7 +118,12 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtShowPassword" layoutX="351.0" layoutY="527.0" prefHeight="38.0" prefWidth="400.0" style="-fx-background-color: ehite;" text="          ">
+      <ImageView fx:id="btnHidePw" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" layoutX="962.0" layoutY="534.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/hide.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtShowPassword" layoutX="350.0" layoutY="526.0" prefHeight="39.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>

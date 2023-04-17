@@ -81,16 +81,34 @@ public class UserFormController implements Initializable {
     }
 
     public void showPwOnAction(MouseEvent mouseEvent) {
-
+        String passWord = pfPassword.getText();
+        txtShowPassword.setText(passWord);
+        pfPassword.setVisible(false);
+        btnHidePw.setDisable(false);
+        btnHidePw.setVisible(true);
+        btnshowPassword.setDisable(true);
+        btnshowPassword.setVisible(false);
+        txtShowPassword.setVisible(true);
     }
 
     public void hidePwOnAction(MouseEvent mouseEvent) {
+        String passWord = txtShowPassword.getText();
+        pfPassword.setText(passWord);
+        txtShowPassword.setVisible(false);
+        btnHidePw.setDisable(true);
+        btnHidePw.setVisible(false);
+        btnshowPassword.setDisable(false);
+        btnshowPassword.setVisible(true);
+        pfPassword.setVisible(true);
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadProfile();
         btnHidePw.setDisable(true);
+        btnHidePw.setVisible(false);
+        txtShowPassword.setVisible(false);
     }
 
     //--- Load user data to ui
