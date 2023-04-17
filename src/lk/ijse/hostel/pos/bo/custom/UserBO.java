@@ -16,7 +16,7 @@ public interface UserBO extends SuperBO {
 
     boolean saveUser(UserDTO dto) throws SQLException, ClassNotFoundException;
 
-    boolean updateStudent(UserDTO dto) throws SQLException, ClassNotFoundException;
+    boolean updateUser(UserDTO dto) throws SQLException, ClassNotFoundException;
 
     boolean deleteUser(String id) throws SQLException, ClassNotFoundException;
 

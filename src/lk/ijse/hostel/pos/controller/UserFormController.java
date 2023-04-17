@@ -7,18 +7,29 @@ package lk.ijse.hostel.pos.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import lk.ijse.hostel.pos.bo.BOFactory;
+import lk.ijse.hostel.pos.bo.custom.UserBO;
+import lk.ijse.hostel.pos.dto.UserDTO;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class UserFormController {
+public class UserFormController implements Initializable {
+
+    private final UserBO userBO= (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+
     public AnchorPane userAP;
     public Circle btnHome;
     public ImageView btnBack;
@@ -48,11 +59,46 @@ public class UserFormController {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        String userName = txtUsername.getText();
+        String name = txtName.getText();
+        String address = txtAddress.getText();
+        String contact = txtContact.getText();
+        String passWord = pfPassword.getText();
+
+        try {
+            boolean isUpdated = userBO.updateUser(new UserDTO(userName, name, address, contact, passWord));
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 
     public void showPwOnAction(MouseEvent mouseEvent) {
     }
 
     public void hidePwOnAction(MouseEvent mouseEvent) {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    //--- Load user data to ui
+
+    private void loadProfile(){
+        try {
+            ArrayList<UserDTO> allUser = userBO.getAllUser();
+            for (UserDTO userDTO : allUser) {
+                txtUsername.setText(userDTO.getUserName());
+                txtName.setText(userDTO.getName());
+                txtAddress.setText(userDTO.getAddress());
+                txtContact.setText(userDTO.getContact_no());
+                pfPassword.setText(userDTO.getPassword());
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
