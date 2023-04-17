@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
@@ -20,8 +21,10 @@ import lk.ijse.hostel.pos.util.Routes;
 import lk.ijse.hostel.pos.view.tm.RoomTM;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class RoomFormController {
+public class RoomFormController implements Initializable {
     public AnchorPane roomAP;
     public Circle btnHome;
     public ImageView btnBack;
@@ -42,7 +45,7 @@ public class RoomFormController {
 
     public void homeOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,roomAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, roomAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,12 +65,28 @@ public class RoomFormController {
 
     public void backOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,roomAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, roomAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void roomIdOnAction(ActionEvent actionEvent) {
+    }
+
+    private void initUi() {
+        txtRoomId.setDisable(true);
+        txtRoomType.setDisable(true);
+        txtKeyMoney.setDisable(true);
+        txtQty.setDisable(true);
+
+        btnSave.setDisable(true);
+        btnUpdate.setDisable(true);
+        btnDelete.setDisable(true);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initUi();
     }
 }
