@@ -109,6 +109,19 @@ public class UserFormController implements Initializable {
         btnHidePw.setDisable(true);
         btnHidePw.setVisible(false);
         txtShowPassword.setVisible(false);
+
+      /*  String userName="Admin";
+        String name="Gathsara";
+        String address="Galle";
+        String contact="0763412498";
+        String passWord="1234";
+
+        UserDTO userDTO = new UserDTO(userName, name, address, contact, passWord);
+        try {
+            userBO.saveUser(userDTO);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }*/
     }
 
     //--- Load user data to ui
