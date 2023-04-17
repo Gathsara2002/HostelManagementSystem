@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -65,7 +66,27 @@ public class RoomFormController implements Initializable {
     public void newRoomOnAction(ActionEvent actionEvent) {
     }
 
+    //--- Save room data
+
     public void saveOnAction(ActionEvent actionEvent) {
+        String id = txtRoomId.getText();
+        String type = txtRoomType.getText();
+        String keyMoney = txtKeyMoney.getText();
+        int qty = Integer.parseInt(txtQty.getText());
+
+        try {
+            boolean isSaved = roomBO.saveRooms(new RoomDTO(id, type, keyMoney, qty));
+            if (isSaved) {
+                tblRoom.getItems().add(new RoomTM(id, type, keyMoney, qty));
+                clearFields();
+                loadAllRooms();
+                setRoomIds();
+                new Alert(Alert.AlertType.CONFIRMATION, "Room added to system !").show();
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
+        }
+        btnAddRoom.fire();
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
@@ -100,6 +121,8 @@ public class RoomFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initUi();
         setCellValueFactory();
+        loadAllRooms();
+        setRoomIds();
     }
 
     private void setCellValueFactory() {
