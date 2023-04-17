@@ -174,6 +174,7 @@ public class StudentFormController implements Initializable {
     //--- Create combo box for select student ids
 
     public void sidOnAction(ActionEvent actionEvent) {
+        setActive();
         String value = (String) cmbStdId.getValue();
         try {
             StudentDTO studentDTO = studentBO.searchStudent(value);
