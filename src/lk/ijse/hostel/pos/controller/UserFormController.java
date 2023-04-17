@@ -60,6 +60,8 @@ public class UserFormController implements Initializable {
         }
     }
 
+    //--- Update user details
+
     public void updateOnAction(ActionEvent actionEvent) {
 
         String userName = txtUsername.getText();
@@ -80,6 +82,8 @@ public class UserFormController implements Initializable {
         }
 
     }
+
+    //--- Show / Hide passwords to user
 
     public void showPwOnAction(MouseEvent mouseEvent) {
         String id=txtUsername.getText();
