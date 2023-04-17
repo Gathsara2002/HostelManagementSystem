@@ -133,7 +133,7 @@ public class StudentFormController implements Initializable {
         LocalDate dob = datePicker.getValue();
 
         try {
-            studentBO.updateStudent(new StudentDTO(sid,name,address,contact,dob,gender));
+            studentBO.updateStudent(new StudentDTO(sid, name, address, contact, dob, gender));
             new Alert(Alert.AlertType.CONFIRMATION, "Student updated successfully !").show();
 
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -141,7 +141,19 @@ public class StudentFormController implements Initializable {
         }
     }
 
+    //--- Delete student
+
     public void deleteOnAction(ActionEvent actionEvent) {
+        String value = (String) cmbStdId.getValue();
+        try {
+            boolean isDeleted = studentBO.deleteStudent(value);
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION,"Student deleted successfully").show();
+                initUi();
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     //--- Create combo box for select student ids
@@ -165,9 +177,9 @@ public class StudentFormController implements Initializable {
         txtStdName.setText(studentDTO.getName());
         datePicker.setValue(studentDTO.getDob());
 
-        if (studentDTO.getGender().equalsIgnoreCase("Male")){
+        if (studentDTO.getGender().equalsIgnoreCase("Male")) {
             rbtnMale.fire();
-        }else {
+        } else {
             rbtnFemale.fire();
         }
     }
@@ -176,6 +188,8 @@ public class StudentFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initUi();
         setStudentIds();
+        setCellFactoryValues();
+        loadAllStudents();
     }
 
     private void initUi() {
@@ -226,20 +240,20 @@ public class StudentFormController implements Initializable {
 
     //--- Load students to table
 
-    private void loadAllStudents(){
+    private void loadAllStudents() {
         tblStudent.getItems().clear();
         try {
             ArrayList<StudentDTO> allStudent = studentBO.getAllStudent();
             for (StudentDTO studentDTO : allStudent) {
-                tblStudent.getItems().add(new StudentTM(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),
-                        studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
+                tblStudent.getItems().add(new StudentTM(studentDTO.getStudent_id(), studentDTO.getName(), studentDTO.getAddress(),
+                        studentDTO.getContact_no(), studentDTO.getDob(), studentDTO.getGender()));
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    private void setCellFactoryValues(){
+    private void setCellFactoryValues() {
         colSid.setCellValueFactory(new PropertyValueFactory<>("student_id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
