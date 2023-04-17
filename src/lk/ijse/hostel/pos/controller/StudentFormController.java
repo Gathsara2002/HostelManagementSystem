@@ -120,6 +120,8 @@ public class StudentFormController implements Initializable {
         } catch (SQLException | ClassNotFoundException throwables) {
             new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
         }
+
+       btnNewStd.fire();
     }
 
     //--- Update student data
@@ -147,6 +149,7 @@ public class StudentFormController implements Initializable {
         } catch (SQLException | ClassNotFoundException throwables) {
             new Alert(Alert.AlertType.ERROR, "Something happened !").show();
         }
+        btnNewStd.fire();
     }
 
     //--- Delete student
@@ -164,6 +167,8 @@ public class StudentFormController implements Initializable {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
+
+        btnNewStd.fire();
     }
 
     //--- Create combo box for select student ids
