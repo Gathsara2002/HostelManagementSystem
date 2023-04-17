@@ -182,6 +182,7 @@ public class StudentFormController implements Initializable {
         txtAddress.setDisable(true);
         txtContact.setDisable(true);
         txtStdName.setDisable(true);
+        txtDate.setDisable(true);
         rbtnFemale.setDisable(true);
         rbtnMale.setDisable(true);
         datePicker.setDisable(true);
@@ -198,6 +199,7 @@ public class StudentFormController implements Initializable {
         txtAddress.setDisable(false);
         txtContact.setDisable(false);
         txtStdName.setDisable(false);
+        txtDate.setDisable(false);
         rbtnFemale.setDisable(false);
         rbtnMale.setDisable(false);
         datePicker.setDisable(false);
