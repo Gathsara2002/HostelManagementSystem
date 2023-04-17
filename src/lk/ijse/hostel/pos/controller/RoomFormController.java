@@ -134,7 +134,17 @@ public class RoomFormController implements Initializable {
         }
     }
 
+    //--- combo box selection
+
     public void roomIdOnAction(ActionEvent actionEvent) {
+        setActive();
+        String value = (String) cmbRoomId.getValue();
+        try {
+            RoomDTO roomDTO = roomBO.searchAllRooms(value);
+            fillRoomData(roomDTO);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     private void initUi() {
@@ -209,5 +219,14 @@ public class RoomFormController implements Initializable {
         btnSave.setDisable(false);
         btnUpdate.setDisable(false);
         btnDelete.setDisable(false);
+    }
+
+    //--- set data to text fields
+
+    private void fillRoomData(RoomDTO roomDTO) {
+        txtRoomId.setText(roomDTO.getRoom_type_id());
+        txtRoomType.setText(roomDTO.getType());
+        txtKeyMoney.setText(roomDTO.getKey_money());
+        txtQty.setText(String.valueOf(roomDTO.getQty()));
     }
 }
