@@ -111,16 +111,16 @@ public class StudentFormController implements Initializable {
         }
         LocalDate dob = datePicker.getValue();
 
-        if (!name.matches("^([A-z]{3,50})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid name ! Try again").show();
+        if (!name.matches("^([A-z]{3,50})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
             txtStdName.requestFocus();
             return;
-        }else if (!address.matches("^([A-z]{3,50})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid address ! Try again").show();
+        } else if (!address.matches("^([A-z]{3,50})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid address ! Try again").show();
             txtAddress.requestFocus();
             return;
-        }else if (!contact.matches("^(07[0-9]{8})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid contact number ! Try again").show();
+        } else if (!contact.matches("^(07[0-9]{8})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid contact number ! Try again").show();
             txtContact.requestFocus();
             return;
         }
@@ -136,7 +136,7 @@ public class StudentFormController implements Initializable {
             new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();
         }
 
-       btnNewStd.fire();
+        btnNewStd.fire();
     }
 
     //--- Update student data
@@ -154,16 +154,16 @@ public class StudentFormController implements Initializable {
         }
         LocalDate dob = datePicker.getValue();
 
-        if (!name.matches("^([A-z]{3,50})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid name ! Try again").show();
+        if (!name.matches("^([A-z]{3,50})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
             txtStdName.requestFocus();
             return;
-        }else if (!address.matches("^([A-z]{3,50})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid address ! Try again").show();
+        } else if (!address.matches("^([A-z]{3,50})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid address ! Try again").show();
             txtAddress.requestFocus();
             return;
-        }else if (!contact.matches("^(07[0-9]{8})$")){
-            new Alert(Alert.AlertType.ERROR,"Invalid contact number ! Try again").show();
+        } else if (!contact.matches("^(07[0-9]{8})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid contact number ! Try again").show();
             txtContact.requestFocus();
             return;
         }

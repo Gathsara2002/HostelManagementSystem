@@ -76,6 +76,25 @@ public class RoomFormController implements Initializable {
         String keyMoney = txtKeyMoney.getText();
         int qty = Integer.parseInt(txtQty.getText());
 
+        if (!id.matches("^(RM-[0-9]{3})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
+            txtRoomId.requestFocus();
+            return;
+        } else if (!type.matches("^([A-z]{2,20})")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room type ! ").show();
+            txtRoomType.requestFocus();
+            return;
+        } else if (!keyMoney.matches("^([0-9]{3,6})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
+            txtKeyMoney.requestFocus();
+            return;
+        } else if (!txtQty.getText().matches("^[1-9]{1,3}")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room qty ! ").show();
+            txtQty.requestFocus();
+            return;
+        }
+
+
         try {
             boolean isSaved = roomBO.saveRooms(new RoomDTO(id, type, keyMoney, qty));
             if (isSaved) {
@@ -98,6 +117,25 @@ public class RoomFormController implements Initializable {
         String type = txtRoomType.getText();
         String keyMoney = txtKeyMoney.getText();
         int qty = Integer.parseInt(txtQty.getText());
+
+        if (!id.matches("^(RM-[0-9]{3})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
+            txtRoomId.requestFocus();
+            return;
+        } else if (!type.matches("^([A-z]{2,20})")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room type ! ").show();
+            txtRoomType.requestFocus();
+            return;
+        } else if (!keyMoney.matches("^([0-9]{3,6})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
+            txtKeyMoney.requestFocus();
+            return;
+        } else if (!txtQty.getText().matches("^[1-9]{1,3}")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid room qty ! ").show();
+            txtQty.requestFocus();
+            return;
+        }
+
         try {
             boolean isUpdated = roomBO.updateRooms(new RoomDTO(id, type, keyMoney, qty));
             if (isUpdated) {
