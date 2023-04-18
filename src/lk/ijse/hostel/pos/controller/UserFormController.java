@@ -70,11 +70,37 @@ public class UserFormController implements Initializable {
         String contact = txtContact.getText();
         String passWord = txtShowPassword.getText();
 
+        if (!userName.matches("^[A-z]{3,50}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid username ! Try again").show();
+            txtUsername.requestFocus();
+            return;
+
+        } else if (!name.matches("^([A-z]{3,40})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
+            txtName.requestFocus();
+            return;
+
+        } else if (!address.matches("^([A-z]{3,40})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid address ! Try again").show();
+            txtAddress.requestFocus();
+            return;
+
+        } else if (!contact.matches("^(07[0-9]{8})$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid contact number ! Try again").show();
+            txtContact.requestFocus();
+            return;
+
+        } else if (!passWord.matches("^[A-Z 0-9]{5}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid password ! Try again").show();
+            pfPassword.requestFocus();
+            return;
+        }
+
         try {
             boolean isUpdated = userBO.updateUser(new UserDTO(userName, name, address, contact, passWord));
             if (isUpdated) {
                 loadProfile();
-                new Alert(Alert.AlertType.CONFIRMATION,"User updated !").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "User updated !").show();
             }
 
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -86,11 +112,11 @@ public class UserFormController implements Initializable {
     //--- Show / Hide passwords to user
 
     public void showPwOnAction(MouseEvent mouseEvent) {
-        String id=txtUsername.getText();
-        String passWord=null;
+        String id = txtUsername.getText();
+        String passWord = null;
         try {
             UserDTO userDTO = userBO.searchUser(id);
-            passWord=userDTO.getPassword();
+            passWord = userDTO.getPassword();
 
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -105,11 +131,11 @@ public class UserFormController implements Initializable {
     }
 
     public void hidePwOnAction(MouseEvent mouseEvent) {
-        String id=txtUsername.getText();
-        String passWord=null;
+        String id = txtUsername.getText();
+        String passWord = null;
         try {
             UserDTO userDTO = userBO.searchUser(id);
-            passWord=userDTO.getPassword();
+            passWord = userDTO.getPassword();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
