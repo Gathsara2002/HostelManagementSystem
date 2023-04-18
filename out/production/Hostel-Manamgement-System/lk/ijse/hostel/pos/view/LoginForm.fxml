@@ -2,10 +2,13 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
    <children>
@@ -17,7 +20,33 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtUsername" layoutX="198.0" layoutY="382.0" prefHeight="36.0" prefWidth="300.0" />
-      <TextField fx:id="txtPassword" layoutX="198.0" layoutY="434.0" prefHeight="36.0" prefWidth="300.0" />
+      <TextField fx:id="txtUsername" layoutX="198.0" layoutY="382.0" prefHeight="36.0" prefWidth="300.0" promptText="Username">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="txtPassword" layoutX="198.0" layoutY="434.0" prefHeight="36.0" prefWidth="300.0" promptText="Password">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="198.0" layoutY="434.0" prefHeight="36.0" prefWidth="300.0" promptText="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </PasswordField>
+      <ImageView disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/hide.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/view.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblWarning" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="198.0" layoutY="491.0" prefHeight="25.0" prefWidth="300.0" text=" Invalid Username or Password ! " textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

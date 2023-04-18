@@ -7,6 +7,7 @@ package lk.ijse.hostel.pos.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -28,21 +29,23 @@ public class LoginFormController {
     public TextField txtUsername;
     public TextField txtPassword;
     public PasswordField passwordField;
+    public Label lblWarning;
 
     private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
 
-    String userName1 = txtUsername.getText();
-    String passWord1 = passwordField.getText();
-    String userName2;
-    String passWord2;
-
     public void logInOnAction(ActionEvent actionEvent) {
+        if (checkLogin()){
+            try {
+                Navigation.navigate(Routes.DASHBOARD_FORM, loginAP);
 
-        try {
-            Navigation.navigate(Routes.DASHBOARD_FORM, loginAP);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            lblWarning.setVisible(true);
+            txtUsername.clear();
+            passwordField.clear();
+            txtUsername.requestFocus();
         }
     }
 
@@ -55,6 +58,10 @@ public class LoginFormController {
     //--- Check username , password when user login to system
 
     private boolean checkLogin() {
+        String userName1 = txtUsername.getText();
+        String passWord1 = passwordField.getText();
+        String userName2 = null;
+        String passWord2=null;
 
         try {
             ArrayList<UserDTO> allUser = userBO.getAllUser();

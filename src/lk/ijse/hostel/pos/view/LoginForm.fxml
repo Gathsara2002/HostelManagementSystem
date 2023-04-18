@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -42,5 +43,10 @@
             <Image url="@assets/view.png" />
          </image>
       </ImageView>
+      <Label fx:id="lblWarning" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="198.0" layoutY="491.0" prefHeight="25.0" prefWidth="300.0" text=" Invalid Username or Password ! " textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
