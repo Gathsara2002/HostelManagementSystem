@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hostel.pos.bo.BOFactory;
@@ -37,14 +39,14 @@ public class LoginFormController {
     private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
 
     public void logInOnAction(ActionEvent actionEvent) {
-        if (checkLogin()){
+        if (checkLogin()) {
             try {
                 Navigation.navigate(Routes.DASHBOARD_FORM, loginAP);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             lblWarning.setVisible(true);
             txtUsername.clear();
             passwordField.clear();
@@ -82,7 +84,7 @@ public class LoginFormController {
         String userName1 = txtUsername.getText();
         String passWord1 = passwordField.getText();
         String userName2 = null;
-        String passWord2=null;
+        String passWord2 = null;
 
         try {
             ArrayList<UserDTO> allUser = userBO.getAllUser();
@@ -96,4 +98,13 @@ public class LoginFormController {
         }
         return userName1.equalsIgnoreCase(userName2) && passWord1.equalsIgnoreCase(passWord2);
     }
+
+    //--- Add key event to username
+
+    public void usernameOnAction(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            passwordField.requestFocus();
+        }
+    }
+
 }
