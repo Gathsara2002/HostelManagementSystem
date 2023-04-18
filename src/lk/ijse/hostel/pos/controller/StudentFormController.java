@@ -110,6 +110,21 @@ public class StudentFormController implements Initializable {
             gender = "Male";
         }
         LocalDate dob = datePicker.getValue();
+
+        if (!name.matches("^([A-z]{3,50})$")){
+            new Alert(Alert.AlertType.ERROR,"Invalid name ! Try again").show();
+            txtStdName.requestFocus();
+            return;
+        }else if (!address.matches("^([A-z]{3,50})$")){
+            new Alert(Alert.AlertType.ERROR,"Invalid address ! Try again").show();
+            txtAddress.requestFocus();
+            return;
+        }else if (!contact.matches("^(07[0-9]{8})$")){
+            new Alert(Alert.AlertType.ERROR,"Invalid contact number ! Try again").show();
+            txtContact.requestFocus();
+            return;
+        }
+
         try {
             studentBO.saveStudent(new StudentDTO(sid, name, address, contact, dob, gender));
             tblStudent.getItems().add(new StudentTM(sid, name, address, contact, dob, gender));
