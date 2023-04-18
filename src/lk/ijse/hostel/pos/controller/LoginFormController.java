@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hostel.pos.bo.BOFactory;
@@ -30,6 +31,8 @@ public class LoginFormController {
     public TextField txtPassword;
     public PasswordField passwordField;
     public Label lblWarning;
+    public ImageView btnHidePw;
+    public ImageView btnShowPw;
 
     private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
 
@@ -49,10 +52,28 @@ public class LoginFormController {
         }
     }
 
+    //--- Hide password
+
     public void hidePwOnAction(MouseEvent mouseEvent) {
+        btnShowPw.setDisable(false);
+        btnShowPw.setVisible(true);
+        btnHidePw.setVisible(false);
+        btnHidePw.setDisable(true);
+
+        passwordField.setVisible(true);
     }
 
+    //--- Show password
+
     public void showPwOnAction(MouseEvent mouseEvent) {
+        btnShowPw.setDisable(true);
+        btnShowPw.setVisible(false);
+        btnHidePw.setVisible(true);
+        btnHidePw.setDisable(false);
+
+        txtPassword.setText(passwordField.getText());
+        passwordField.setVisible(false);
+        txtPassword.setVisible(true);
     }
 
     //--- Check username , password when user login to system

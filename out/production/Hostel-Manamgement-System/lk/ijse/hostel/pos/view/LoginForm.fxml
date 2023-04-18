@@ -33,12 +33,12 @@
             <Font size="15.0" />
          </font>
       </PasswordField>
-      <ImageView disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="btnHidePw" disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@assets/hide.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnShowPw" fitHeight="30.0" fitWidth="30.0" layoutX="524.0" layoutY="437.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/view.png" />
          </image>
