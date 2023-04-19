@@ -16,6 +16,9 @@ import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.entity.Reservation;
 import lk.ijse.hostel.pos.entity.Room;
 import lk.ijse.hostel.pos.entity.Student;
+import lk.ijse.hostel.pos.util.SessionFactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -40,7 +43,23 @@ public class ReservationBOImpl implements ReservationBO {
     //---- Save reservation (transaction)
     @Override
     public boolean saveReservation(ReservationDT0 dto) throws SQLException, ClassNotFoundException {
-        return false;
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Student student = session.get(Student.class, dto.getStudent_id());
+        Room room = session.get(Room.class, dto.getRoom_type_id());
+
+        Reservation reservation = new Reservation(dto.getRes_id(), dto.getDate(), dto.getStatus(), dto.getPayment(), student, room);
+        session.save(reservation);
+
+        room.setQty(room.getQty() - 1);
+        session.update(room);
+
+        transaction.commit();
+        session.close();
+
+        return true;
     }
 
     @Override

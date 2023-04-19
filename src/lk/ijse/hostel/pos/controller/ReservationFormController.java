@@ -14,6 +14,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,7 @@ import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import lk.ijse.hostel.pos.bo.BOFactory;
 import lk.ijse.hostel.pos.bo.custom.ReservationBO;
+import lk.ijse.hostel.pos.dto.ReservationDT0;
 import lk.ijse.hostel.pos.dto.RoomDTO;
 import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
@@ -112,6 +114,37 @@ public class ReservationFormController implements Initializable {
     }
 
     public void reserveOnAction(ActionEvent actionEvent) {
+        String resId = txtResNo.getText();
+        LocalDate date = LocalDate.parse(lblDate.getText());
+        double room_key_money = Double.parseDouble(txtKeyMoney.getText());
+        double advance = Double.parseDouble(txtAdvance.getText());
+        String status = String.valueOf((room_key_money - advance));
+
+        String stdId = String.valueOf(cmbSid.getValue());
+        String stdName = txtStdId.getText();
+        String address = txtAddress.getText();
+        String contact = txtContact.getText();
+        LocalDate dob = LocalDate.parse(txtDob.getText());
+        String gender = txtGender.getText();
+
+        String roomId = String.valueOf(cmbRoom.getValue());
+        String roomType = txtId.getText();
+        String keyMoney = txtKeyMoney.getText();
+        int qty = Integer.parseInt(txtqty.getText());
+
+        saveReservation(new ReservationDT0(resId, date, status, advance, stdId, roomId));
+
+        clearText();
+
+    }
+
+    private void saveReservation(ReservationDT0 dto) {
+        try {
+            boolean isSaved = reservationBO.saveReservation(dto);
+            new Alert(Alert.AlertType.CONFIRMATION, "Room reserved successfully !").show();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            new Alert(Alert.AlertType.WARNING, "Something happened !").show();
+        }
     }
 
     @Override
@@ -218,12 +251,28 @@ public class ReservationFormController implements Initializable {
 
     //--- Generate new register id
 
-    private void generateNewRegId(){
+    private void generateNewRegId() {
         try {
             txtResNo.setText(reservationBO.generateNewId());
             txtAdvance.requestFocus();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    //--- Clear text fields after reservation
+
+    private void clearText() {
+        txtStdId.clear();
+        txtAddress.clear();
+        txtContact.clear();
+        txtDob.clear();
+        txtGender.clear();
+        txtAdvance.clear();
+        txtKeyMoney.clear();
+        txtqty.clear();
+        txtId.clear();
+        cmbRoom.getSelectionModel().clearSelection();
+        cmbSid.getSelectionModel().clearSelection();
     }
 }
