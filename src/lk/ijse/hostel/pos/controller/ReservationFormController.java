@@ -9,18 +9,27 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
 
 import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ResourceBundle;
 
-public class ReservationFormController {
+public class ReservationFormController implements Initializable {
     public AnchorPane reservationAP;
     public Circle btnHome;
     public ImageView btnBack;
@@ -72,5 +81,32 @@ public class ReservationFormController {
     }
 
     public void reserveOnAction(ActionEvent actionEvent) {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        setDate();
+        setTime();
+    }
+
+    private void setDate() {
+        lblDate.setText(String.valueOf(LocalDate.now()));
+    }
+
+    private void setTime() {
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, event -> {
+            LocalTime currentTime = LocalTime.now();
+            lblTime.setText(currentTime.getHour() + ":" +
+                    currentTime.getMinute() + ":" +
+                    currentTime.getSecond());
+
+        }),
+                new KeyFrame(Duration.seconds(1))
+
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+
     }
 }
