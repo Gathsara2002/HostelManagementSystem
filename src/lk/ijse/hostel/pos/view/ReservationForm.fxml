@@ -7,6 +7,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -61,7 +62,7 @@
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStdName" layoutX="550.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student Name :" AnchorPane.leftAnchor="550.0">
+      <JFXTextField fx:id="txtStdId" layoutX="550.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Student ID  :" AnchorPane.leftAnchor="550.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
@@ -82,7 +83,7 @@
          </font>
       </JFXTextField>
       <Separator layoutX="100.0" layoutY="410.0" prefHeight="3.0" prefWidth="1200.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="450.0" />
-      <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="263.0" onAction="#cmbSidOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Student ID :" AnchorPane.leftAnchor="100.0">
+      <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="263.0" onAction="#cmbSidOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Student Name :" AnchorPane.leftAnchor="100.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -100,12 +101,12 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room ID :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
+      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room Name   :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXTextField fx:id="txtType" layoutX="549.0" layoutY="518.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Room Type : " AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="500.0">
+      <JFXTextField fx:id="txtId" layoutX="549.0" layoutY="518.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" text="Room ID : " AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="500.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
@@ -120,17 +121,20 @@
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0" prefWidth="67.0" text="Yes ">
+      <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0" prefWidth="67.0" selected="true" text="Yes ">
          <font>
             <Font size="16.0" />
          </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="status" />
+         </toggleGroup>
       </JFXRadioButton>
       <Label fx:id="lblStatus" layoutX="549.0" layoutY="597.0" text="Pay Key Money : " AnchorPane.leftAnchor="550.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
       </Label>
-      <JFXRadioButton fx:id="rbtnNo" layoutX="794.0" layoutY="590.0" onAction="#noOnAction" prefHeight="40.0" prefWidth="67.0" text="No">
+      <JFXRadioButton fx:id="rbtnNo" layoutX="794.0" layoutY="590.0" onAction="#noOnAction" prefHeight="40.0" prefWidth="67.0" text="No" toggleGroup="$status">
          <font>
             <Font size="16.0" />
          </font>

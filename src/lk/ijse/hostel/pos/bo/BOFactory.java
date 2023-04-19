@@ -11,6 +11,7 @@ import lk.ijse.hostel.pos.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hostel.pos.bo.custom.impl.UserBOImpl;
 
 public class BOFactory {
+
     private static BOFactory boFactory;
 
     private BOFactory() {
@@ -30,7 +31,7 @@ public class BOFactory {
             case USER:
                 return new UserBOImpl();
             case RESERVATION:
-                new ReservationBOImpl();
+                return new ReservationBOImpl();
             default:
                 return null;
         }

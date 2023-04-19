@@ -9,9 +9,7 @@ import lk.ijse.hostel.pos.bo.custom.RoomBO;
 import lk.ijse.hostel.pos.dao.DAOFactory;
 import lk.ijse.hostel.pos.dao.custom.RoomDAO;
 import lk.ijse.hostel.pos.dto.RoomDTO;
-import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.entity.Room;
-import lk.ijse.hostel.pos.entity.Student;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -100,7 +100,7 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room ID :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
+      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room ID  :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

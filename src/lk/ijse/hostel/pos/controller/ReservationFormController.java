@@ -15,26 +15,35 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import lk.ijse.hostel.pos.bo.BOFactory;
+import lk.ijse.hostel.pos.bo.custom.ReservationBO;
+import lk.ijse.hostel.pos.dto.RoomDTO;
+import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
 import lk.ijse.hostel.pos.util.Routes;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ReservationFormController implements Initializable {
+
+    private final ReservationBO reservationBO = (ReservationBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.RESERVATION);
+
     public AnchorPane reservationAP;
     public Circle btnHome;
     public ImageView btnBack;
     public JFXTextField txtAddress;
-    public JFXTextField txtStdName;
     public JFXTextField txtDob;
     public JFXTextField txtContact;
     public JFXTextField txtGender;
@@ -43,7 +52,6 @@ public class ReservationFormController implements Initializable {
     public Label lblDate;
     public Label lblTime;
     public JFXComboBox cmbRoom;
-    public JFXTextField txtType;
     public JFXTextField txtKeyMoney;
     public JFXTextField txtqty;
     public JFXRadioButton rbtnYes;
@@ -51,10 +59,13 @@ public class ReservationFormController implements Initializable {
     public JFXRadioButton rbtnNo;
     public JFXTextField txtAdvance;
     public JFXButton btnReserve;
+    public JFXTextField txtId;
+    public ToggleGroup status;
+    public JFXTextField txtStdId;
 
     public void homeOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,reservationAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, reservationAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +73,7 @@ public class ReservationFormController implements Initializable {
 
     public void backOnAction(MouseEvent mouseEvent) {
         try {
-            Navigation.navigate(Routes.BACK_TO_DASHBOARD,reservationAP);
+            Navigation.navigate(Routes.BACK_TO_DASHBOARD, reservationAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,6 +98,8 @@ public class ReservationFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setDate();
         setTime();
+        setRoomIds();
+        setStudentIds();
     }
 
     private void setDate() {
@@ -108,4 +121,32 @@ public class ReservationFormController implements Initializable {
         clock.play();
 
     }
+
+    //---Set room name to combo box
+
+    private void setRoomIds() {
+
+        try {
+            ArrayList<RoomDTO> allRooms = reservationBO.getAllRooms();
+            for (RoomDTO allRoom : allRooms) {
+                cmbRoom.getItems().add(allRoom.getType());
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    //---Set student name to combo box
+
+    private void setStudentIds() {
+        try {
+            ArrayList<StudentDTO> allStudent = reservationBO.getAllStudent();
+            for (StudentDTO studentDTO : allStudent) {
+                cmbSid.getItems().add(studentDTO.getName());
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

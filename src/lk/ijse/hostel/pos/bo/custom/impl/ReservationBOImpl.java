@@ -75,10 +75,9 @@ public class ReservationBOImpl implements ReservationBO {
     @Override
     public ArrayList<StudentDTO> getAllStudent() throws SQLException, ClassNotFoundException {
         ArrayList<Student> all = studentDAO.getAll();
-        ArrayList<StudentDTO> allStudent = new ArrayList();
+        ArrayList<StudentDTO> allStudent = new ArrayList<>();
         for (Student student : all) {
-            allStudent.add(new StudentDTO(student.getStudent_id(), student.getName(), student.getAddress(),
-                    student.getContact_no(), student.getDob(), student.getGender()));
+            allStudent.add(new StudentDTO(student.getStudent_id(), student.getName(), student.getAddress(), student.getContact_no(), student.getDob(), student.getGender()));
         }
         return allStudent;
     }
@@ -86,7 +85,7 @@ public class ReservationBOImpl implements ReservationBO {
     @Override
     public ArrayList<RoomDTO> getAllRooms() throws SQLException, ClassNotFoundException {
         ArrayList<Room> all = roomDAO.getAll();
-        ArrayList<RoomDTO> allRoom = new ArrayList();
+        ArrayList<RoomDTO> allRoom = new ArrayList<>();
         for (Room room : all) {
             allRoom.add(new RoomDTO(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
         }
