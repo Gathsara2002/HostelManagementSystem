@@ -5,6 +5,7 @@
 
 package lk.ijse.hostel.pos.bo;
 
+import lk.ijse.hostel.pos.bo.custom.impl.ReservationBOImpl;
 import lk.ijse.hostel.pos.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hostel.pos.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hostel.pos.bo.custom.impl.UserBOImpl;
@@ -19,23 +20,23 @@ public class BOFactory {
         return boFactory == null ? boFactory = new BOFactory() : boFactory;
     }
 
-    public SuperBO getBO(BOTypes types){
+    public SuperBO getBO(BOTypes types) {
 
-        switch (types){
+        switch (types) {
             case STUDENT:
-               return new StudentBOImpl();
+                return new StudentBOImpl();
             case ROOM:
                 return new RoomBOImpl();
             case USER:
-                return  new UserBOImpl();
-
+                return new UserBOImpl();
+            case RESERVATION:
+                new ReservationBOImpl();
             default:
                 return null;
         }
     }
 
-    public enum BOTypes{
+    public enum BOTypes {
         ROOM, STUDENT, RESERVATION, USER
-
     }
 }
