@@ -8,10 +8,42 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
+<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="600.0" layoutX="135.0" layoutY="107.0" strokeType="INSIDE" strokeWidth="2.0" width="500.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.8371212139274135">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.11836257576942444" green="0.4545809030532837" blue="0.6947368383407593" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.36204576043068654">
+                     <color>
+                        <Color red="0.5541871190071106" green="0.06877192854881287" blue="0.6631578803062439" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6757148015625513">
+                     <color>
+                        <Color red="0.1242000013589859" green="0.4542500078678131" blue="0.6899999976158142" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5541871190071106" green="0.06877192854881287" blue="0.6631578803062439" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
       <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="198.0" layoutY="580.0" onAction="#logInOnAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #192a56;" text="Log In " textFill="WHITE">
          <font>
             <Font name="Californian FB Bold" size="20.0" />
@@ -48,5 +80,15 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="135.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/user-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="135.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/password-icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
