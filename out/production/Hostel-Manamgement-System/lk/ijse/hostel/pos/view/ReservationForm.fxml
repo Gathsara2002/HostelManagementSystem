@@ -62,7 +62,7 @@
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStdId" labelFloat="true" layoutX="550.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student ID  :" AnchorPane.leftAnchor="550.0">
+      <JFXTextField fx:id="txtStdId" labelFloat="true" layoutX="550.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student Name  :" AnchorPane.leftAnchor="550.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
@@ -83,11 +83,6 @@
          </font>
       </JFXTextField>
       <Separator layoutX="100.0" layoutY="410.0" prefHeight="3.0" prefWidth="1200.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="450.0" />
-      <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="263.0" onAction="#cmbSidOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Student Name :" AnchorPane.leftAnchor="100.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXComboBox>
       <JFXTextField fx:id="txtResNo" labelFloat="true" layoutX="161.0" layoutY="183.0" prefHeight="38.0" prefWidth="300.0" promptText="Reservation No : " AnchorPane.leftAnchor="100.0">
          <font>
             <Font name="Californian FB" size="20.0" />
@@ -101,12 +96,12 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room Name   :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
+      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room ID   :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="549.0" layoutY="518.0" prefHeight="35.0" prefWidth="300.0" promptText="Room ID : " AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="500.0">
+      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="549.0" layoutY="518.0" prefHeight="35.0" prefWidth="300.0" promptText="Room Name : " AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="500.0">
          <font>
             <Font name="Californian FB" size="20.0" />
          </font>
@@ -149,5 +144,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
+      <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="262.0" onAction="#cmbSidOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Student ID :" />
    </children>
 </AnchorPane>

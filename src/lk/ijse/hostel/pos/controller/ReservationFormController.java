@@ -23,7 +23,6 @@ import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import lk.ijse.hostel.pos.bo.BOFactory;
 import lk.ijse.hostel.pos.bo.custom.ReservationBO;
-import lk.ijse.hostel.pos.dto.ReservationDT0;
 import lk.ijse.hostel.pos.dto.RoomDTO;
 import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
@@ -141,7 +140,7 @@ public class ReservationFormController implements Initializable {
         try {
             ArrayList<RoomDTO> allRooms = reservationBO.getAllRooms();
             for (RoomDTO allRoom : allRooms) {
-                cmbRoom.getItems().add(allRoom.getType());
+                cmbRoom.getItems().add(allRoom.getRoom_type_id());
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -154,7 +153,7 @@ public class ReservationFormController implements Initializable {
         try {
             ArrayList<StudentDTO> allStudent = reservationBO.getAllStudent();
             for (StudentDTO studentDTO : allStudent) {
-                cmbSid.getItems().add(studentDTO.getName());
+                cmbSid.getItems().add(studentDTO.getStudent_id());
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -192,7 +191,7 @@ public class ReservationFormController implements Initializable {
     }
 
     private void fillStudentData(StudentDTO studentDTO) {
-        txtStdId.setText(studentDTO.getStudent_id());
+        txtStdId.setText(studentDTO.getName());
         txtContact.setText(studentDTO.getContact_no());
         txtAddress.setText(studentDTO.getAddress());
         txtDob.setText(String.valueOf(studentDTO.getDob()));
