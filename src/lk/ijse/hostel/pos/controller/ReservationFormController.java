@@ -87,11 +87,7 @@ public class ReservationFormController implements Initializable {
         String value = (String) cmbSid.getValue();
         try {
             StudentDTO studentDTO = reservationBO.searchStudent(value);
-            txtStdId.setText(studentDTO.getStudent_id());
-            txtContact.setText(studentDTO.getContact_no());
-            txtAddress.setText(studentDTO.getAddress());
-            txtDob.setText(String.valueOf(studentDTO.getDob()));
-            txtGender.setText(studentDTO.getGender());
+            fillStudentData(studentDTO);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
@@ -165,7 +161,7 @@ public class ReservationFormController implements Initializable {
         }
     }
 
-    private void initUI(){
+    private void initUI() {
         txtStdId.setDisable(true);
         txtAddress.setDisable(true);
         txtContact.setDisable(true);
@@ -178,7 +174,7 @@ public class ReservationFormController implements Initializable {
         btnReserve.setDisable(true);
     }
 
-    private void setActive1(){
+    private void setActive1() {
         txtStdId.setDisable(false);
         txtAddress.setDisable(false);
         txtContact.setDisable(false);
@@ -186,7 +182,7 @@ public class ReservationFormController implements Initializable {
         txtGender.setDisable(false);
     }
 
-    private void setActive2(){
+    private void setActive2() {
         txtAdvance.setDisable(false);
         txtKeyMoney.setDisable(false);
         txtqty.setDisable(false);
@@ -195,4 +191,11 @@ public class ReservationFormController implements Initializable {
 
     }
 
+    private void fillStudentData(StudentDTO studentDTO) {
+        txtStdId.setText(studentDTO.getStudent_id());
+        txtContact.setText(studentDTO.getContact_no());
+        txtAddress.setText(studentDTO.getAddress());
+        txtDob.setText(String.valueOf(studentDTO.getDob()));
+        txtGender.setText(studentDTO.getGender());
+    }
 }
