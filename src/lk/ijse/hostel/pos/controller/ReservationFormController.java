@@ -121,6 +121,7 @@ public class ReservationFormController implements Initializable {
         setRoomIds();
         setStudentIds();
         initUI();
+        generateNewRegId();
     }
 
     private void setDate() {
@@ -213,5 +214,15 @@ public class ReservationFormController implements Initializable {
         txtId.setText(roomDTO.getType());
         txtKeyMoney.setText(roomDTO.getKey_money());
 
+    }
+
+    //--- Generate new register id
+
+    private void generateNewRegId(){
+        try {
+            txtResNo.setText(reservationBO.generateNewId());
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
