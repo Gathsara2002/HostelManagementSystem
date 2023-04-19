@@ -221,6 +221,7 @@ public class ReservationFormController implements Initializable {
     private void generateNewRegId(){
         try {
             txtResNo.setText(reservationBO.generateNewId());
+            txtAdvance.requestFocus();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
