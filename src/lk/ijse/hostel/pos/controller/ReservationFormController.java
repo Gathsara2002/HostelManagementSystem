@@ -85,7 +85,6 @@ public class ReservationFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         setDate();
         setTime();
     }
