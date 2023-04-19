@@ -163,4 +163,21 @@ public class ReservationFormController implements Initializable {
         btnReserve.setDisable(true);
     }
 
+    private void setActive1(){
+        txtStdId.setDisable(false);
+        txtAddress.setDisable(false);
+        txtContact.setDisable(false);
+        txtDob.setDisable(false);
+        txtGender.setDisable(false);
+    }
+
+    private void setActive2(){
+        txtAdvance.setDisable(false);
+        txtKeyMoney.setDisable(false);
+        txtqty.setDisable(false);
+        txtId.setDisable(false);
+        btnReserve.setDisable(false);
+
+    }
+
 }
