@@ -92,7 +92,17 @@ public class ReservationFormController implements Initializable {
         }
     }
 
+    //--- Search room and get details
+
     public void cmbRoomOnAction(ActionEvent actionEvent) {
+        setActive2();
+        String value = (String) cmbRoom.getValue();
+        try {
+            RoomDTO roomDTO = reservationBO.searchAllRooms(value);
+            fillRoomData(roomDTO);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public void yesOnAction(ActionEvent actionEvent) {
@@ -196,5 +206,12 @@ public class ReservationFormController implements Initializable {
         txtAddress.setText(studentDTO.getAddress());
         txtDob.setText(String.valueOf(studentDTO.getDob()));
         txtGender.setText(studentDTO.getGender());
+    }
+
+    private void fillRoomData(RoomDTO roomDTO) {
+        txtqty.setText(String.valueOf(roomDTO.getQty()));
+        txtId.setText(roomDTO.getType());
+        txtKeyMoney.setText(roomDTO.getKey_money());
+
     }
 }
