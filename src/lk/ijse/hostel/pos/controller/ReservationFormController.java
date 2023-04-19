@@ -23,6 +23,7 @@ import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import lk.ijse.hostel.pos.bo.BOFactory;
 import lk.ijse.hostel.pos.bo.custom.ReservationBO;
+import lk.ijse.hostel.pos.dto.ReservationDT0;
 import lk.ijse.hostel.pos.dto.RoomDTO;
 import lk.ijse.hostel.pos.dto.StudentDTO;
 import lk.ijse.hostel.pos.util.Navigation;
@@ -79,7 +80,21 @@ public class ReservationFormController implements Initializable {
         }
     }
 
+    //--- Search and get student data from combo box
+
     public void cmbSidOnAction(ActionEvent actionEvent) {
+        setActive1();
+        String value = (String) cmbSid.getValue();
+        try {
+            StudentDTO studentDTO = reservationBO.searchStudent(value);
+            txtStdId.setText(studentDTO.getStudent_id());
+            txtContact.setText(studentDTO.getContact_no());
+            txtAddress.setText(studentDTO.getAddress());
+            txtDob.setText(String.valueOf(studentDTO.getDob()));
+            txtGender.setText(studentDTO.getGender());
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public void cmbRoomOnAction(ActionEvent actionEvent) {
