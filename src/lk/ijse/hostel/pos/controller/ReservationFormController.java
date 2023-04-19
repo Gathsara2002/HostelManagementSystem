@@ -100,6 +100,7 @@ public class ReservationFormController implements Initializable {
         setTime();
         setRoomIds();
         setStudentIds();
+        initUI();
     }
 
     private void setDate() {
@@ -147,6 +148,19 @@ public class ReservationFormController implements Initializable {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    private void initUI(){
+        txtStdId.setDisable(true);
+        txtAddress.setDisable(true);
+        txtContact.setDisable(true);
+        txtDob.setDisable(true);
+        txtGender.setDisable(true);
+        txtAdvance.setDisable(true);
+        txtKeyMoney.setDisable(true);
+        txtqty.setDisable(true);
+        txtId.setDisable(true);
+        btnReserve.setDisable(true);
     }
 
 }
