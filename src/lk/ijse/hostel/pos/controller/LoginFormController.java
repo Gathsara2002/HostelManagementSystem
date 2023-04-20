@@ -5,6 +5,7 @@
 
 package lk.ijse.hostel.pos.controller;
 
+
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
@@ -27,16 +28,24 @@ import java.util.ArrayList;
 
 public class LoginFormController {
 
-    public AnchorPane loginAP;
-    public JFXButton btnLogin;
+    private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+
     public TextField txtUsername;
-    public TextField txtPassword;
     public PasswordField passwordField;
-    public Label lblWarning;
+    public JFXButton btnLogin;
     public ImageView btnHidePw;
     public ImageView btnShowPw;
+    public Label lblWarning;
+    public AnchorPane loginAP;
+    public TextField txtPassword;
 
-    private final UserBO userBO = (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+    //--- Add key event to username
+
+    public void usernameOnAction(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            passwordField.requestFocus();
+        }
+    }
 
     public void logInOnAction(ActionEvent actionEvent) {
         if (checkLogin()) {
@@ -63,6 +72,7 @@ public class LoginFormController {
         btnHidePw.setDisable(true);
 
         passwordField.setVisible(true);
+        txtPassword.setVisible(false);
     }
 
     //--- Show password
@@ -77,8 +87,6 @@ public class LoginFormController {
         passwordField.setVisible(false);
         txtPassword.setVisible(true);
     }
-
-    //--- Check username , password when user login to system
 
     private boolean checkLogin() {
         String userName1 = txtUsername.getText();
@@ -98,13 +106,4 @@ public class LoginFormController {
         }
         return userName1.equalsIgnoreCase(userName2) && passWord1.equalsIgnoreCase(passWord2);
     }
-
-    //--- Add key event to username
-
-    public void usernameOnAction(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
-            passwordField.requestFocus();
-        }
-    }
-
 }

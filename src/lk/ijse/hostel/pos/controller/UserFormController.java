@@ -70,12 +70,12 @@ public class UserFormController implements Initializable {
         String contact = txtContact.getText();
         String passWord = txtShowPassword.getText();
 
-        if (!userName.matches("^[A-z]{3,50}$")) {
+      /*  if (!userName.matches("^[A-z]{3,50}$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid username ! Try again").show();
             txtUsername.requestFocus();
             return;
 
-        } else if (!name.matches("^([A-z]{3,40})$")) {
+        } else if (!name.matches("^([A-z]+[A-z]{3,40})$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
             txtName.requestFocus();
             return;
@@ -90,11 +90,11 @@ public class UserFormController implements Initializable {
             txtContact.requestFocus();
             return;
 
-        } else if (!passWord.matches("^[A-Z 0-9]{5}$")) {
+        } else if (!passWord.matches("^[0-9]{5}$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid password ! Try again").show();
             pfPassword.requestFocus();
             return;
-        }
+        }*/
 
         try {
             boolean isUpdated = userBO.updateUser(new UserDTO(userName, name, address, contact, passWord));
