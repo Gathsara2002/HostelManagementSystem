@@ -88,7 +88,7 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="49.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="82.0" onMouseClicked="#backToLoginOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/back-icon.png" />
          </image>

@@ -55,6 +55,10 @@ public class Navigation {
                 window.setTitle("DashBoard Form");
                 initUI("DashBoardForm.fxml");
                 break;
+            case LOGIN_FORM:
+                window.setTitle("Login Form");
+                initUI("LoginForm.fxml");
+                break;
         }
     }
 

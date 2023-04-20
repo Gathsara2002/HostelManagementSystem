@@ -58,11 +58,24 @@ public class DashBordFormController {
     }
 
     public void homeOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.LOGIN_FORM,dashBoardAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnKeyMoneyOnAction(ActionEvent actionEvent) {
         try {
             Navigation.navigate(Routes.KEY_MONEY_FORM, dashBoardAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void backToLoginOnAction(MouseEvent mouseEvent) {
+        try {
+            Navigation.navigate(Routes.LOGIN_FORM,dashBoardAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
