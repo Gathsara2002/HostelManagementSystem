@@ -80,11 +80,7 @@ public class RoomFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
             txtRoomId.requestFocus();
             return;
-        } else if (!type.matches("^([A-z]{2,20})")) {
-            new Alert(Alert.AlertType.ERROR, "Invalid room type ! ").show();
-            txtRoomType.requestFocus();
-            return;
-        } else if (!keyMoney.matches("^([0-9]{3,6})$")) {
+        } else if (!keyMoney.matches("^([0-9]{3,6}.00)$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
             txtKeyMoney.requestFocus();
             return;
@@ -121,11 +117,7 @@ public class RoomFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
             txtRoomId.requestFocus();
             return;
-        } else if (!type.matches("^([A-z]{2,20})")) {
-            new Alert(Alert.AlertType.ERROR, "Invalid room type ! ").show();
-            txtRoomType.requestFocus();
-            return;
-        } else if (!keyMoney.matches("^([0-9]{3,6})$")) {
+        } else if (!keyMoney.matches("^([0-9]{3,6}.00)$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
             txtKeyMoney.requestFocus();
             return;
@@ -140,7 +132,7 @@ public class RoomFormController implements Initializable {
             if (isUpdated) {
                 clearFields();
                 loadAllRooms();
-                new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Room updated successfully!").show();
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             new Alert(Alert.AlertType.WARNING, "Something Wrong Happened !").show();

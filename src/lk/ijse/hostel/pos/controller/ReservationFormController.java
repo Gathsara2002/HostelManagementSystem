@@ -85,7 +85,7 @@ public class ReservationFormController implements Initializable {
 
     public void cmbSidOnAction(ActionEvent actionEvent) {
         setActive1();
-        String value = (String) cmbSid.getValue();
+        String value = String.valueOf(cmbSid.getValue());
         try {
             StudentDTO studentDTO = reservationBO.searchStudent(value);
             fillStudentData(studentDTO);
@@ -98,7 +98,7 @@ public class ReservationFormController implements Initializable {
 
     public void cmbRoomOnAction(ActionEvent actionEvent) {
         setActive2();
-        String value = (String) cmbRoom.getValue();
+        String value = String.valueOf(cmbRoom.getValue());
         try {
             RoomDTO roomDTO = reservationBO.searchAllRooms(value);
             fillRoomData(roomDTO);
