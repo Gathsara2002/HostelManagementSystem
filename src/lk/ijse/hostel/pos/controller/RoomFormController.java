@@ -76,7 +76,7 @@ public class RoomFormController implements Initializable {
         String keyMoney = txtKeyMoney.getText();
         int qty = Integer.parseInt(txtQty.getText());
 
-        if (!id.matches("^(RM-[0-9]{3})$")) {
+        if (!id.matches("^(RM-[0-9]{4})$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
             txtRoomId.requestFocus();
             return;
@@ -88,12 +88,11 @@ public class RoomFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
             txtKeyMoney.requestFocus();
             return;
-        } else if (!txtQty.getText().matches("^[1-9]{1,3}")) {
+        } else if (!txtQty.getText().matches("^[0-9]{1,3}")) {
             new Alert(Alert.AlertType.ERROR, "Invalid room qty ! ").show();
             txtQty.requestFocus();
             return;
         }
-
 
         try {
             boolean isSaved = roomBO.saveRooms(new RoomDTO(id, type, keyMoney, qty));
@@ -118,7 +117,7 @@ public class RoomFormController implements Initializable {
         String keyMoney = txtKeyMoney.getText();
         int qty = Integer.parseInt(txtQty.getText());
 
-        if (!id.matches("^(RM-[0-9]{3})$")) {
+        if (!id.matches("^(RM-[0-9]{4})$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid room id ! ").show();
             txtRoomId.requestFocus();
             return;
@@ -130,7 +129,7 @@ public class RoomFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Invalid key money! ").show();
             txtKeyMoney.requestFocus();
             return;
-        } else if (!txtQty.getText().matches("^[1-9]{1,3}")) {
+        } else if (!txtQty.getText().matches("^[0-9]{1,3}")) {
             new Alert(Alert.AlertType.ERROR, "Invalid room qty ! ").show();
             txtQty.requestFocus();
             return;
@@ -140,7 +139,6 @@ public class RoomFormController implements Initializable {
             boolean isUpdated = roomBO.updateRooms(new RoomDTO(id, type, keyMoney, qty));
             if (isUpdated) {
                 clearFields();
-                setRoomIds();
                 loadAllRooms();
                 new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully!").show();
             }
@@ -158,7 +156,7 @@ public class RoomFormController implements Initializable {
             if (isDeleted) {
                 clearFields();
                 loadAllRooms();
-                setRoomIds();
+                cmbRoomId.getItems().remove(roomId);
                 new Alert(Alert.AlertType.CONFIRMATION, "Room deleted successfully !").show();
             }
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -179,7 +177,7 @@ public class RoomFormController implements Initializable {
 
     public void roomIdOnAction(ActionEvent actionEvent) {
         setActive();
-        String value = (String) cmbRoomId.getValue();
+        String value = String.valueOf(cmbRoomId.getValue());
         try {
             RoomDTO roomDTO = roomBO.searchAllRooms(value);
             fillRoomData(roomDTO);
@@ -217,13 +215,13 @@ public class RoomFormController implements Initializable {
     //--- Set room ids to cob box
 
     private void setRoomIds() {
-        ObservableList<String> roomIds = FXCollections.observableArrayList();
+        ObservableList<String> roomList = FXCollections.observableArrayList();
         try {
             ArrayList<RoomDTO> allRooms = roomBO.getAllRooms();
             for (RoomDTO allRoom : allRooms) {
-                roomIds.add(allRoom.getRoom_type_id());
+                roomList.add(allRoom.getRoom_type_id());
             }
-            cmbRoomId.setItems(roomIds);
+            cmbRoomId.setItems(roomList);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }

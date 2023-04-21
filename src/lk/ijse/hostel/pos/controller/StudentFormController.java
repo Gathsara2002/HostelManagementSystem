@@ -172,7 +172,6 @@ public class StudentFormController implements Initializable {
             studentBO.updateStudent(new StudentDTO(sid, name, address, contact, dob, gender));
             clearFields();
             loadAllStudents();
-            setStudentIds();
             new Alert(Alert.AlertType.CONFIRMATION, "Student updated successfully !").show();
 
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -190,7 +189,7 @@ public class StudentFormController implements Initializable {
             if (isDeleted) {
                 clearFields();
                 loadAllStudents();
-                setStudentIds();
+                cmbStdId.getItems().remove(value);
                 new Alert(Alert.AlertType.CONFIRMATION, "Student deleted successfully").show();
             }
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -204,7 +203,7 @@ public class StudentFormController implements Initializable {
 
     public void sidOnAction(ActionEvent actionEvent) {
         setActive();
-        String value = (String) cmbStdId.getValue();
+        String value = String.valueOf(cmbStdId.getValue());
         try {
             StudentDTO studentDTO = studentBO.searchStudent(value);
             fillStudentData(studentDTO);
@@ -271,16 +270,16 @@ public class StudentFormController implements Initializable {
     //-----Ser student's ids to combo box
 
     private void setStudentIds() {
-        ObservableList<String> list = FXCollections.observableArrayList();
+        ObservableList<String> stdList = FXCollections.observableArrayList();
         try {
             ArrayList<StudentDTO> allStudent = studentBO.getAllStudent();
             for (StudentDTO studentDTO : allStudent) {
-                list.add(studentDTO.getStudent_id());
+               stdList.add(studentDTO.getStudent_id());
             }
+            cmbStdId.setItems(stdList);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
-        cmbStdId.setItems(list);
     }
 
     //--- Load students to table
