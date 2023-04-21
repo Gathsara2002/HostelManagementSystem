@@ -111,7 +111,7 @@ public class StudentFormController implements Initializable {
         }
         LocalDate dob = datePicker.getValue();
 
-        if (!name.matches("^([A-z]{3,50})$")) {
+        if (!name.matches("^[A-Za-z ]+$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
             txtStdName.requestFocus();
             return;
@@ -154,7 +154,7 @@ public class StudentFormController implements Initializable {
         }
         LocalDate dob = datePicker.getValue();
 
-        if (!name.matches("^([A-z]{3,50})$")) {
+        if (!name.matches("^[A-Za-z ]+$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid name ! Try again").show();
             txtStdName.requestFocus();
             return;
