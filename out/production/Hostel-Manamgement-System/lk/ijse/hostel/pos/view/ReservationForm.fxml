@@ -116,7 +116,7 @@
             <Font name="Californian FB" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0" prefWidth="67.0" selected="true" text="Yes ">
+      <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0" prefWidth="67.0" text="Yes ">
          <font>
             <Font size="16.0" />
          </font>

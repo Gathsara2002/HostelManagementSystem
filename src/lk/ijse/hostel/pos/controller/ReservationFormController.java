@@ -108,16 +108,25 @@ public class ReservationFormController implements Initializable {
     }
 
     public void yesOnAction(ActionEvent actionEvent) {
+        txtAdvance.setDisable(false);
     }
 
     public void noOnAction(ActionEvent actionEvent) {
+        txtAdvance.setDisable(true);
     }
 
     public void reserveOnAction(ActionEvent actionEvent) {
         String resId = txtResNo.getText();
         LocalDate date = LocalDate.parse(lblDate.getText());
         double room_key_money = Double.parseDouble(txtKeyMoney.getText());
-        double advance = Double.parseDouble(txtAdvance.getText());
+
+        double advance;
+        if (txtAdvance.isDisable()){
+            advance=0;
+        }else {
+            advance= Double.parseDouble(txtAdvance.getText());
+        }
+
         String status = String.valueOf((room_key_money - advance));
 
         String stdId = String.valueOf(cmbSid.getValue());
@@ -215,6 +224,8 @@ public class ReservationFormController implements Initializable {
         txtqty.setDisable(true);
         txtId.setDisable(true);
         btnReserve.setDisable(true);
+        rbtnYes.setDisable(true);
+        rbtnNo.setDisable(true);
     }
 
     private void setActive1() {
@@ -226,11 +237,12 @@ public class ReservationFormController implements Initializable {
     }
 
     private void setActive2() {
-        txtAdvance.setDisable(false);
         txtKeyMoney.setDisable(false);
         txtqty.setDisable(false);
         txtId.setDisable(false);
         btnReserve.setDisable(false);
+        rbtnNo.setDisable(false);
+        rbtnYes.setDisable(false);
 
     }
 
@@ -272,7 +284,5 @@ public class ReservationFormController implements Initializable {
         txtKeyMoney.clear();
         txtqty.clear();
         txtId.clear();
-        cmbRoom.getSelectionModel().clearSelection();
-        cmbSid.getSelectionModel().clearSelection();
     }
 }
