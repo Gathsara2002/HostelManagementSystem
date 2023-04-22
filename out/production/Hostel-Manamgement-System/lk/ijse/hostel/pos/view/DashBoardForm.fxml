@@ -13,120 +13,147 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="dashBoardAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.DashBordFormController">
-   <children>
-      <Label layoutX="452.0" layoutY="86.0" prefHeight="48.0" prefWidth="529.0" text="ADMIN DASHBOARD" textFill="#32ff7e" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="85.0">
-         <font>
-            <Font name="Engravers MT" size="36.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="0.5" layoutX="59.0" layoutY="121.0" stroke="GREY" strokeType="INSIDE" width="1000.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="135.0" />
-      <Button fx:id="btnUser" layoutX="906.0" layoutY="414.0" mnemonicParsing="false" onAction="#manageUserOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="250.0" AnchorPane.rightAnchor="350.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/user.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnReserve" layoutX="627.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnReserveOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="200.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/reserve.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnRoom" layoutX="1043.0" layoutY="232.0" mnemonicParsing="false" onAction="#manageRoomOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/room.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnStudent" layoutX="209.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnStdOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="200.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/student.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Circle fx:id="btnHome" layoutX="74.0" layoutY="102.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="82.0" onMouseClicked="#backToLoginOnAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/back-icon.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Label layoutX="577.0" layoutY="639.8" prefHeight="40.0" prefWidth="245.0" text="WELCOME" textFill="#32ff7e" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="577.0" AnchorPane.rightAnchor="577.4">
-         <font>
-            <Font name="Engravers MT" size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="482.0" layoutY="689.0" prefHeight="36.0" prefWidth="434.0" text="Please select one of above operation to proceed" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="482.0" AnchorPane.rightAnchor="483.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="465.0" layoutY="756.0" prefHeight="36.0" prefWidth="470.0" text="Copyright © 2023 Hostel Management System.All rights reserved">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="49.0" layoutY="9.0" text="Hostel Management System" textFill="#dc0d0d">
-         <font>
-            <Font name="Berlin Sans FB" size="28.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnKeyMoney" layoutX="366.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnKeyMoneyOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="350.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/key-money.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-   </children>
+<AnchorPane fx:id="dashBoardAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.hostel.pos.controller.DashBordFormController">
+    <children>
+        <Label layoutX="452.0" layoutY="86.0" prefHeight="48.0" prefWidth="529.0" text="ADMIN DASHBOARD"
+               textFill="#32ff7e" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="85.0">
+            <font>
+                <Font name="Engravers MT" size="36.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" stroke="WHITE" strokeType="INSIDE"
+                   strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="0.5" layoutX="59.0" layoutY="121.0" stroke="GREY"
+                   strokeType="INSIDE" width="1000.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="135.0"/>
+        <Button fx:id="btnUser" layoutX="906.0" layoutY="414.0" mnemonicParsing="false" onAction="#manageUserOnAction"
+                prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;"
+                AnchorPane.bottomAnchor="250.0" AnchorPane.rightAnchor="350.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@assets/user.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btnReserve" layoutX="627.0" layoutY="211.0" mnemonicParsing="false"
+                onAction="#btnReserveOnAction" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;"
+                AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="200.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@assets/reserve.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btnRoom" layoutX="1043.0" layoutY="232.0" mnemonicParsing="false" onAction="#manageRoomOnAction"
+                prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="100.0"
+                AnchorPane.topAnchor="200.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@assets/room.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btnStudent" layoutX="209.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnStdOnAction"
+                prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="100.0"
+                AnchorPane.topAnchor="200.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@assets/student.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Circle fx:id="btnHome" layoutX="74.0" layoutY="102.0" onMouseClicked="#homeOnAction" radius="29.0"
+                stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679"/>
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456"/>
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Circle>
+        <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="82.0"
+                   onMouseClicked="#backToLoginOnAction" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/back-icon.png"/>
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <Label layoutX="577.0" layoutY="639.8" prefHeight="40.0" prefWidth="245.0" text="WELCOME" textFill="#32ff7e"
+               AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="577.0" AnchorPane.rightAnchor="577.4">
+            <font>
+                <Font name="Engravers MT" size="36.0"/>
+            </font>
+        </Label>
+        <Label layoutX="482.0" layoutY="689.0" prefHeight="36.0" prefWidth="434.0"
+               text="Please select one of above operation to proceed" AnchorPane.bottomAnchor="75.0"
+               AnchorPane.leftAnchor="482.0" AnchorPane.rightAnchor="483.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="465.0" layoutY="756.0" prefHeight="36.0" prefWidth="470.0"
+               text="Copyright © 2023 Hostel Management System.All rights reserved">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <Label layoutX="49.0" layoutY="9.0" text="Hostel Management System" textFill="#dc0d0d">
+            <font>
+                <Font name="Berlin Sans FB" size="28.0"/>
+            </font>
+        </Label>
+        <Button fx:id="btnKeyMoney" layoutX="366.0" layoutY="407.0" mnemonicParsing="false"
+                onAction="#btnKeyMoneyOnAction" prefHeight="150.0" prefWidth="200.0"
+                style="-fx-background-color: white;" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="350.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@assets/key-money.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
 </AnchorPane>

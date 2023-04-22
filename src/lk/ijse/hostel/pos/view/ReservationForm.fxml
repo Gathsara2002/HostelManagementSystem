@@ -18,132 +18,162 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="reservationAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.ReservationFormController">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutX="164.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Label layoutX="77.0" layoutY="7.0" text="Hostel Management System" textFill="#dc0d0d" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="7.0">
-         <font>
-            <Font name="Berlin Sans FB" size="28.0" />
-         </font>
-      </Label>
-      <Circle fx:id="btnHome" layoutX="74.0" layoutY="735.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="52.0" layoutY="714.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/backtoicon.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Label layoutX="77.0" layoutY="80.0" text="Reservation Form">
-         <font>
-            <Font name="Century Schoolbook" size="36.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="1000.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText="Address :" AnchorPane.rightAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtStdId" labelFloat="true" layoutX="550.0" layoutY="262.0" prefHeight="35.0" prefWidth="300.0" promptText=" Student Name  :" AnchorPane.leftAnchor="550.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtDob" labelFloat="true" layoutX="550.0" layoutY="342.0" prefHeight="35.0" prefWidth="300.0" promptText="Date Of Birth  :" AnchorPane.leftAnchor="550.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="100.0" layoutY="342.0" prefHeight="35.0" prefWidth="300.0" promptText="Contact No :" AnchorPane.leftAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtGender" labelFloat="true" layoutX="1000.0" layoutY="342.0" prefHeight="35.0" prefWidth="300.0" promptText="Gender : " AnchorPane.rightAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <Separator layoutX="100.0" layoutY="410.0" prefHeight="3.0" prefWidth="1200.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="450.0" />
-      <JFXTextField fx:id="txtResNo" labelFloat="true" layoutX="161.0" layoutY="183.0" prefHeight="38.0" prefWidth="300.0" promptText="Reservation No : " AnchorPane.leftAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <Label fx:id="lblDate" layoutX="878.0" layoutY="119.0" prefHeight="35.0" prefWidth="150.0">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-      <Label fx:id="lblTime" layoutX="1101.4" layoutY="118.0" prefHeight="35.0" prefWidth="113.0" AnchorPane.rightAnchor="185.0">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-      <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Room ID   :" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="500.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXComboBox>
-      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="549.0" layoutY="518.0" prefHeight="35.0" prefWidth="300.0" promptText="Room Name : " AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="500.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="998.0" layoutY="516.0" prefHeight="35.0" prefWidth="300.0" promptText="Key Money : " AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="500.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtqty" labelFloat="true" layoutX="100.0" layoutY="583.2" prefHeight="35.0" prefWidth="300.0" promptText="QTY : " AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0" prefWidth="67.0" text="Yes ">
-         <font>
-            <Font size="16.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="status" />
-         </toggleGroup>
-      </JFXRadioButton>
-      <Label fx:id="lblStatus" layoutX="549.0" layoutY="597.0" text="Pay Key Money : " AnchorPane.leftAnchor="550.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </Label>
-      <JFXRadioButton fx:id="rbtnNo" layoutX="794.0" layoutY="590.0" onAction="#noOnAction" prefHeight="40.0" prefWidth="67.0" text="No" toggleGroup="$status">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXRadioButton>
-      <JFXTextField fx:id="txtAdvance" labelFloat="true" layoutX="1000.0" layoutY="583.0" prefHeight="35.0" prefWidth="300.0" promptText="Advance : " AnchorPane.rightAnchor="100.0">
-         <font>
-            <Font name="Californian FB" size="20.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton fx:id="btnReserve" layoutX="1052.0" layoutY="710.0" onAction="#reserveOnAction" prefHeight="43.0" prefWidth="225.0" style="-fx-background-color: #26de81;" text="Reserve" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="100.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </JFXButton>
-      <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="262.0" onAction="#cmbSidOnAction" prefHeight="35.0" prefWidth="300.0" promptText="Student ID :" />
-   </children>
+<AnchorPane fx:id="reservationAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.ReservationFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" layoutX="164.0" layoutY="7.0"
+                   stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.topAnchor="0.0"/>
+        <Label layoutX="77.0" layoutY="7.0" text="Hostel Management System" textFill="#dc0d0d"
+               AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="7.0">
+            <font>
+                <Font name="Berlin Sans FB" size="28.0"/>
+            </font>
+        </Label>
+        <Circle fx:id="btnHome" layoutX="74.0" layoutY="735.0" onMouseClicked="#homeOnAction" radius="29.0"
+                stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679"/>
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456"/>
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Circle>
+        <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="52.0"
+                   layoutY="714.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/backtoicon.png"/>
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <Label layoutX="77.0" layoutY="80.0" text="Reservation Form">
+            <font>
+                <Font name="Century Schoolbook" size="36.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="1000.0" layoutY="262.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Address :" AnchorPane.rightAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtStdId" labelFloat="true" layoutX="550.0" layoutY="262.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText=" Student Name  :" AnchorPane.leftAnchor="550.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtDob" labelFloat="true" layoutX="550.0" layoutY="342.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Date Of Birth  :" AnchorPane.leftAnchor="550.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="100.0" layoutY="342.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Contact No :" AnchorPane.leftAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtGender" labelFloat="true" layoutX="1000.0" layoutY="342.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Gender : " AnchorPane.rightAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <Separator layoutX="100.0" layoutY="410.0" prefHeight="3.0" prefWidth="1200.0" AnchorPane.leftAnchor="100.0"
+                   AnchorPane.topAnchor="450.0"/>
+        <JFXTextField fx:id="txtResNo" labelFloat="true" layoutX="161.0" layoutY="183.0" prefHeight="38.0"
+                      prefWidth="300.0" promptText="Reservation No : " AnchorPane.leftAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <Label fx:id="lblDate" layoutX="878.0" layoutY="119.0" prefHeight="35.0" prefWidth="150.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="lblTime" layoutX="1101.4" layoutY="118.0" prefHeight="35.0" prefWidth="113.0"
+               AnchorPane.rightAnchor="185.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <JFXComboBox fx:id="cmbRoom" labelFloat="true" layoutX="120.0" layoutY="511.0" onAction="#cmbRoomOnAction"
+                     prefHeight="35.0" prefWidth="300.0" promptText="Room ID   :" AnchorPane.leftAnchor="100.0"
+                     AnchorPane.topAnchor="500.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </JFXComboBox>
+        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="549.0" layoutY="518.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Room Name : " AnchorPane.leftAnchor="550.0"
+                      AnchorPane.topAnchor="500.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="998.0" layoutY="516.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Key Money : " AnchorPane.rightAnchor="100.0"
+                      AnchorPane.topAnchor="500.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtqty" labelFloat="true" layoutX="100.0" layoutY="583.2" prefHeight="35.0"
+                      prefWidth="300.0" promptText="QTY : " AnchorPane.bottomAnchor="180.0"
+                      AnchorPane.leftAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXRadioButton fx:id="rbtnYes" layoutX="708.0" layoutY="589.0" onAction="#yesOnAction" prefHeight="40.0"
+                        prefWidth="67.0" text="Yes ">
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="status"/>
+            </toggleGroup>
+        </JFXRadioButton>
+        <Label fx:id="lblStatus" layoutX="549.0" layoutY="597.0" text="Pay Key Money : " AnchorPane.leftAnchor="550.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </Label>
+        <JFXRadioButton fx:id="rbtnNo" layoutX="794.0" layoutY="590.0" onAction="#noOnAction" prefHeight="40.0"
+                        prefWidth="67.0" text="No" toggleGroup="$status">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="txtAdvance" labelFloat="true" layoutX="1000.0" layoutY="583.0" prefHeight="35.0"
+                      prefWidth="300.0" promptText="Advance : " AnchorPane.rightAnchor="100.0">
+            <font>
+                <Font name="Californian FB" size="20.0"/>
+            </font>
+        </JFXTextField>
+        <JFXButton fx:id="btnReserve" layoutX="1052.0" layoutY="710.0" onAction="#reserveOnAction" prefHeight="43.0"
+                   prefWidth="225.0" style="-fx-background-color: #26de81;" text="Reserve"
+                   AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="100.0">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </JFXButton>
+        <JFXComboBox fx:id="cmbSid" labelFloat="true" layoutX="100.0" layoutY="262.0" onAction="#cmbSidOnAction"
+                     prefHeight="35.0" prefWidth="300.0" promptText="Student ID :"/>
+    </children>
 </AnchorPane>

@@ -28,13 +28,15 @@ public class DAOFactory {
                 return new ReservationDAOImpl();
             case USER:
                 return new UserDAOImpl();
+            case QUERY:
+                return new QueryDAOImpl();
             default:
                 return null;
         }
     }
 
     public enum DAOTypes {
-        ROOM, STUDENT, RESERVATION, USER
+        ROOM, STUDENT, RESERVATION, USER, QUERY
     }
 
 }

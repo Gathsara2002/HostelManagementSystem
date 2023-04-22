@@ -11,57 +11,71 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
-   <children>
-      <ImageView fitHeight="800.0" fitWidth="1400.0" layoutX="284.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@assets/Login.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtUsername" layoutX="153.0" layoutY="285.0" onKeyPressed="#usernameOnAction" prefHeight="56.0" prefWidth="362.0" promptText="Username">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="470.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/user-icon.png" />
-         </image>
-      </ImageView>
-      <PasswordField fx:id="passwordField" layoutX="153.0" layoutY="366.0" prefHeight="56.0" prefWidth="362.0" promptText="Password">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </PasswordField>
-      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="154.0" layoutY="480.0" onAction="#logInOnAction" prefHeight="56.0" prefWidth="362.0" style="-fx-background-color: #192a56;" text="Log In " textFill="WHITE">
-         <font>
-            <Font name="Californian FB Bold" size="20.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="470.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/password-icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnHidePw" fitHeight="30.0" fitWidth="30.0" layoutX="539.0" layoutY="379.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@assets/hide.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnShowPw" fitHeight="30.0" fitWidth="30.0" layoutX="539.0" layoutY="379.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/view.png" />
-         </image>
-      </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="154.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="362.0" />
-      <Label fx:id="lblWarning" layoutX="154.0" layoutY="433.0" prefHeight="30.0" prefWidth="362.0" text="              Invalid Username or Password !" textFill="RED" visible="false">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtPassword" layoutX="153.0" layoutY="366.0" prefHeight="56.0" prefWidth="362.0" visible="false" />
-   </children>
+<AnchorPane fx:id="loginAP" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.LoginFormController">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1400.0" layoutX="284.0" layoutY="143.0" pickOnBounds="true"
+                   preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@assets/Login.jpg"/>
+            </image>
+        </ImageView>
+        <TextField fx:id="txtUsername" layoutX="153.0" layoutY="285.0" onKeyPressed="#usernameOnAction"
+                   prefHeight="56.0" prefWidth="362.0" promptText="Username">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="470.0" layoutY="295.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@assets/user-icon.png"/>
+            </image>
+        </ImageView>
+        <PasswordField fx:id="passwordField" layoutX="153.0" layoutY="366.0" prefHeight="56.0" prefWidth="362.0"
+                       promptText="Password">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </PasswordField>
+        <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="154.0" layoutY="480.0" onAction="#logInOnAction"
+                   prefHeight="56.0" prefWidth="362.0" style="-fx-background-color: #192a56;" text="Log In "
+                   textFill="WHITE">
+            <font>
+                <Font name="Californian FB Bold" size="20.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </JFXButton>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="470.0" layoutY="376.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@assets/password-icon.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="btnHidePw" fitHeight="30.0" fitWidth="30.0" layoutX="539.0" layoutY="379.0"
+                   onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@assets/hide.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="btnShowPw" fitHeight="30.0" fitWidth="30.0" layoutX="539.0" layoutY="379.0"
+                   onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/view.png"/>
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="154.0" layoutY="433.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="362.0"/>
+        <Label fx:id="lblWarning" layoutX="154.0" layoutY="433.0" prefHeight="30.0" prefWidth="362.0"
+               text="              Invalid Username or Password !" textFill="RED" visible="false">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="txtPassword" layoutX="153.0" layoutY="366.0" prefHeight="56.0" prefWidth="362.0"
+                   visible="false"/>
+    </children>
 </AnchorPane>

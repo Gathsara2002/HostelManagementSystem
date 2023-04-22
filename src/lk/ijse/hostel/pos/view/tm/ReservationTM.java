@@ -16,9 +16,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class ReservationTM {
     private String res_id;
+    private String student_Id;
+    private String room_type_Id;
+    private String name;
     private LocalDate date;
-    private String status;
+    private String key_money;
     private double payment;
-    private String student_id;
-    private String room_type_id;
+    private String status;
 }
