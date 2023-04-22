@@ -19,7 +19,8 @@ public class QueryDAOImpl implements QueryDAO {
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("SELECT reservation .res_id, reservation .student_id.student_id, reservation .room_type_id.room_type_id,reservation .student_id.name,reservation .date,reservation .payment,room .key_money, reservation .status FROM room INNER JOIN reservation ON room .room_type_id = reservation .room_type_id.room_type_id ");
+        Query query = session.createQuery("SELECT res.res_id,res.student_id.student_id,res.room_type_id.room_type_id,res.student_id.name,res.date,res.room_type_id.key_money,res.payment,res.status" +
+                " FROM reservation res INNER JOIN room  r ON res.room_type_id.room_type_id=r.room_type_id ORDER BY res.res_id");
         List list = query.list();
 
         transaction.commit();

@@ -30,7 +30,8 @@ public class CustomDTO {
     private String status;
     private double payment;
 
-    public CustomDTO(String res_id, String student_Id, String room_type_Id, String name, LocalDate date, String key_money, double payment, String status) {
+    public CustomDTO(String res_id, String student_Id, String room_type_Id, String name,
+                     LocalDate date, String key_money, double payment, String status) {
         this.res_id = res_id;
         this.student_Id = student_Id;
         this.room_type_Id = room_type_Id;
