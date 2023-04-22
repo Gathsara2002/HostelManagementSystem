@@ -8,8 +8,5 @@ package lk.ijse.hostel.pos.dao.custom;
 import lk.ijse.hostel.pos.dao.CrudDAO;
 import lk.ijse.hostel.pos.entity.Room;
 
-import java.sql.SQLException;
-
-public interface RoomDAO extends CrudDAO<Room,String> {
-
+public interface RoomDAO extends CrudDAO<Room, String> {
 }
