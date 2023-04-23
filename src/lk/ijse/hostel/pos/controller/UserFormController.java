@@ -94,7 +94,7 @@ public class UserFormController implements Initializable {
             txtContact.requestFocus();
             return;
 
-        } else if (!passWord.matches("^[0-9]{5}$")) {
+        } else if (!passWord.matches("^[0-9]{5,10}$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid password ! Try again").show();
             pfPassword.requestFocus();
             return;

@@ -15,139 +15,123 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="userAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-border-color: black;"
-            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="lk.ijse.hostel.pos.controller.UserFormController">
+<AnchorPane fx:id="userAP" prefHeight="800.0" prefWidth="1400.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.pos.controller.UserFormController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" stroke="WHITE" strokeType="INSIDE"
-                   strokeWidth="0.0" width="1400.0"/>
-        <Circle fx:id="btnHome" layoutX="55.0" layoutY="738.0" onMouseClicked="#homeOnAction" radius="29.0"
-                stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="50.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1400.0" />
+        <Circle fx:id="btnHome" layoutX="55.0" layoutY="738.0" onMouseClicked="#homeOnAction" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
             <fill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
                         <Stop>
                             <color>
-                                <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679"/>
+                                <Color red="0.10292397439479828" green="0.6942690014839172" blue="0.8421052694320679" />
                             </color>
                         </Stop>
                         <Stop offset="1.0">
                             <color>
-                                <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456"/>
+                                <Color red="0.36888888478279114" green="0.8736842274665833" blue="0.5287407636642456" />
                             </color>
                         </Stop>
                     </stops>
                 </LinearGradient>
             </fill>
         </Circle>
-        <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="35.0"
-                   layoutY="718.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="btnBack" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" layoutX="35.0" layoutY="718.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@assets/backtoicon.png"/>
+                <Image url="@assets/backtoicon.png" />
             </image>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
         <Label layoutX="55.0" layoutY="3.0" text="Hostel Management System" textFill="#dc0d0d">
             <font>
-                <Font name="Berlin Sans FB" size="28.0"/>
+                <Font name="Berlin Sans FB" size="28.0" />
             </font>
         </Label>
         <Label layoutX="55.0" layoutY="76.0" text="Manage User">
             <font>
-                <Font name="Century Schoolbook" size="36.0"/>
+                <Font name="Century Schoolbook" size="36.0" />
             </font>
         </Label>
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="150.0" pickOnBounds="true"
-                   preserveRatio="true" AnchorPane.leftAnchor="100.0">
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="100.0">
             <image>
-                <Image url="@assets/user.png"/>
+                <Image url="@assets/user.png" />
             </image>
         </ImageView>
-        <Label layoutX="92.0" layoutY="366.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;"
-               text="    Username" AnchorPane.leftAnchor="99.0">
+        <Label layoutX="92.0" layoutY="366.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;" text="    Username" AnchorPane.leftAnchor="99.0">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="100.0" layoutY="406.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;"
-               text="    Name">
+        <Label layoutX="100.0" layoutY="406.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;" text="    Name">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="100.0" layoutY="446.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;"
-               text="    Address">
+        <Label layoutX="100.0" layoutY="446.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;" text="    Address">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="100.0" layoutY="486.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;"
-               text="    Contact No">
+        <Label layoutX="100.0" layoutY="486.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;" text="    Contact No">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="100.0" layoutY="526.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;"
-               text="    Password">
+        <Label layoutX="100.0" layoutY="526.0" prefHeight="40.0" prefWidth="250.0" style="-fx-border-color: black;" text="    Password">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </Label>
-        <PasswordField fx:id="pfPassword" layoutX="350.0" layoutY="526.0" prefHeight="40.0" prefWidth="600.0"
-                       style="-fx-border-color: black;"/>
-        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="1047.0" layoutY="528.0" onAction="#updateOnAction"
-                   prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cd84f1;" text="Update"
-                   AnchorPane.rightAnchor="150.0">
+        <PasswordField fx:id="pfPassword" layoutX="350.0" layoutY="526.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" />
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="1047.0" layoutY="528.0" onAction="#updateOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cd84f1;" text="Update" AnchorPane.rightAnchor="150.0">
             <font>
-                <Font name="System Bold" size="16.0"/>
+                <Font name="System Bold" size="16.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <ImageView fx:id="btnshowPassword" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="27.0" layoutX="962.0"
-                   layoutY="534.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="btnshowPassword" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="27.0" layoutX="962.0" layoutY="534.0" onMouseClicked="#showPwOnAction" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@assets/view.png"/>
+                <Image url="@assets/view.png" />
             </image>
         </ImageView>
-        <TextField fx:id="txtUsername" layoutX="350.0" layoutY="366.0" prefHeight="40.0" prefWidth="600.0"
-                   style="-fx-border-color: black;" text="          ">
+        <TextField fx:id="txtUsername" layoutX="350.0" layoutY="366.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtName" layoutX="350.0" layoutY="406.0" prefHeight="40.0" prefWidth="600.0"
-                   style="-fx-border-color: black;" text="          ">
+        <TextField fx:id="txtName" layoutX="350.0" layoutY="406.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtAddress" layoutX="350.0" layoutY="446.0" prefHeight="40.0" prefWidth="600.0"
-                   style="-fx-border-color: black;" text="          ">
+        <TextField fx:id="txtAddress" layoutX="350.0" layoutY="446.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtContact" layoutX="350.0" layoutY="486.0" prefHeight="40.0" prefWidth="600.0"
-                   style="-fx-border-color: black;" text="          ">
+        <TextField fx:id="txtContact" layoutX="350.0" layoutY="486.0" prefHeight="40.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </TextField>
-        <ImageView fx:id="btnHidePw" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" layoutX="962.0"
-                   layoutY="534.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="btnHidePw" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" layoutX="962.0" layoutY="534.0" onMouseClicked="#hidePwOnAction" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@assets/hide.png"/>
+                <Image url="@assets/hide.png" />
             </image>
         </ImageView>
-        <TextField fx:id="txtShowPassword" layoutX="350.0" layoutY="526.0" prefHeight="39.0" prefWidth="600.0"
-                   style="-fx-border-color: black;" text="          ">
+        <TextField fx:id="txtShowPassword" layoutX="350.0" layoutY="526.0" prefHeight="39.0" prefWidth="600.0" style="-fx-border-color: black;" text="          ">
             <font>
-                <Font name="Cambria" size="20.0"/>
+                <Font name="Cambria" size="20.0" />
             </font>
         </TextField>
+      <Label layoutX="350.0" layoutY="580.0" prefHeight="26.0" prefWidth="379.0" text="* Password must  include minimum atleast 5 characters">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
